@@ -14,7 +14,7 @@ workflows:
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
             -only-testing:FreshnestTests \
             test
       - name: Run critical UI tests (iPhone simulator)
@@ -22,7 +22,7 @@ workflows:
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
             -only-testing:FreshnestUITests \
             test
     artifacts:
@@ -43,7 +43,7 @@ workflows:
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M4)' \
+            -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)' \
             -only-testing:FreshnestUITests/iPadLayoutUITests \
             test
 
@@ -68,7 +68,7 @@ workflows:
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'platform=iOS Simulator,name=iPhone 17' \
             -only-testing:FreshnestTests \
             test
       - name: Set up code signing

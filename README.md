@@ -33,17 +33,17 @@ xcodebuild -project Freshnest.xcodeproj -scheme Freshnest \
 ```bash
 # Unit tests
 xcodebuild -project Freshnest.xcodeproj -scheme Freshnest \
-  -destination 'platform=iOS Simulator,name=iPhone 16' \
+  -destination 'platform=iOS Simulator,name=iPhone 17' \
   -only-testing:FreshnestTests test
 
 # UI tests
 xcodebuild -project Freshnest.xcodeproj -scheme Freshnest \
-  -destination 'platform=iOS Simulator,name=iPhone 16' \
+  -destination 'platform=iOS Simulator,name=iPhone 17' \
   -only-testing:FreshnestUITests test
 
 # iPad layout tests
 xcodebuild -project Freshnest.xcodeproj -scheme Freshnest \
-  -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M4)' \
+  -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)' \
   -only-testing:FreshnestUITests/iPadLayoutUITests test
 ```
 
