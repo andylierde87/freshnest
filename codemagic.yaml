@@ -17,12 +17,25 @@ workflows:
         XCODE_PROJECT: "Freshnest.xcodeproj"
         XCODE_SCHEME: "Freshnest"
     scripts:
+      - name: Resolve an available iPhone simulator
+        script: |
+          #!/usr/bin/env bash
+          set -e
+          UDID=$(xcrun simctl list devices available | grep -E "iPhone" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1)
+          if [ -z "$UDID" ]; then
+            echo "No existing iPhone simulator found — creating one."
+            RUNTIME=$(xcrun simctl list runtimes available | grep -i "iOS" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimRuntime\.[A-Za-z0-9.-]+')
+            DEVICETYPE=$(xcrun simctl list devicetypes | grep -E "iPhone" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimDeviceType\.[A-Za-z0-9-]+')
+            UDID=$(xcrun simctl create "CI-iPhone" "$DEVICETYPE" "$RUNTIME")
+          fi
+          echo "Using iPhone simulator: $UDID"
+          echo "IPHONE_SIM_UDID=$UDID" >> $CM_ENV
       - name: Run unit tests (iPhone simulator)
         script: |
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -destination "platform=iOS Simulator,id=$IPHONE_SIM_UDID" \
             -only-testing:FreshnestTests \
             test
       - name: Run critical UI tests (iPhone simulator)
@@ -30,7 +43,7 @@ workflows:
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -destination "platform=iOS Simulator,id=$IPHONE_SIM_UDID" \
             -only-testing:FreshnestUITests \
             test
     artifacts:
@@ -46,12 +59,25 @@ workflows:
         XCODE_PROJECT: "Freshnest.xcodeproj"
         XCODE_SCHEME: "Freshnest"
     scripts:
+      - name: Resolve an available iPad simulator
+        script: |
+          #!/usr/bin/env bash
+          set -e
+          UDID=$(xcrun simctl list devices available | grep -E "iPad Pro|iPad Air|iPad " | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1)
+          if [ -z "$UDID" ]; then
+            echo "No existing iPad simulator found — creating one."
+            RUNTIME=$(xcrun simctl list runtimes available | grep -i "iOS" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimRuntime\.[A-Za-z0-9.-]+')
+            DEVICETYPE=$(xcrun simctl list devicetypes | grep -E "iPad Pro" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimDeviceType\.[A-Za-z0-9-]+')
+            UDID=$(xcrun simctl create "CI-iPad" "$DEVICETYPE" "$RUNTIME")
+          fi
+          echo "Using iPad simulator: $UDID"
+          echo "IPAD_SIM_UDID=$UDID" >> $CM_ENV
       - name: Run iPad layout UI tests
         script: |
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPad Pro 13-inch (M5)' \
+            -destination "platform=iOS Simulator,id=$IPAD_SIM_UDID" \
             -only-testing:FreshnestUITests/iPadLayoutUITests \
             test
 
@@ -71,12 +97,25 @@ workflows:
         distribution_type: app_store
         bundle_identifier: "com.pantrypulse.ios"
     scripts:
+      - name: Resolve an available iPhone simulator
+        script: |
+          #!/usr/bin/env bash
+          set -e
+          UDID=$(xcrun simctl list devices available | grep -E "iPhone" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1)
+          if [ -z "$UDID" ]; then
+            echo "No existing iPhone simulator found — creating one."
+            RUNTIME=$(xcrun simctl list runtimes available | grep -i "iOS" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimRuntime\.[A-Za-z0-9.-]+')
+            DEVICETYPE=$(xcrun simctl list devicetypes | grep -E "iPhone" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimDeviceType\.[A-Za-z0-9-]+')
+            UDID=$(xcrun simctl create "CI-iPhone" "$DEVICETYPE" "$RUNTIME")
+          fi
+          echo "Using iPhone simulator: $UDID"
+          echo "IPHONE_SIM_UDID=$UDID" >> $CM_ENV
       - name: Run unit tests before release build
         script: |
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
-            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -destination "platform=iOS Simulator,id=$IPHONE_SIM_UDID" \
             -only-testing:FreshnestTests \
             test
       - name: Set up code signing
