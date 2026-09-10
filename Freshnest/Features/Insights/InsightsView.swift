@@ -105,7 +105,7 @@ struct InsightsView: View {
             Image(systemName: "chart.bar")
                 .font(.system(size: 40))
                 .foregroundStyle(FreshnestColors.secondaryText)
-            Text("Your insights will appear as you use Freshnest.")
+            Text("Your insights will appear as you use PantryPulse.")
                 .font(FreshnestTypography.secondary)
                 .foregroundStyle(FreshnestColors.secondaryText)
                 .multilineTextAlignment(.center)

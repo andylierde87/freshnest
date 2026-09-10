@@ -35,7 +35,7 @@ struct SettingsView: View {
             } header: {
                 Text("Privacy")
             } footer: {
-                Text("Freshness analysis is performed on your device. Freshnest does not upload your food photos for analysis.")
+                Text("Freshness analysis is performed on your device. PantryPulse does not upload your food photos for analysis.")
             }
 
             Section {
@@ -65,7 +65,7 @@ struct SettingsView: View {
                 Text("Notifications")
             } footer: {
                 if notificationPermissionDenied {
-                    Text("Notifications are disabled for Freshnest in iOS Settings.")
+                    Text("Notifications are disabled for PantryPulse in iOS Settings.")
                         .foregroundStyle(FreshnestColors.danger)
                 }
             }
@@ -79,7 +79,7 @@ struct SettingsView: View {
         }
         .navigationTitle("Settings")
         .confirmationDialog(
-            "This permanently deletes all Freshnest data on this device. This cannot be undone.",
+            "This permanently deletes all PantryPulse data on this device. This cannot be undone.",
             isPresented: $showDeleteConfirmation,
             titleVisibility: .visible
         ) {

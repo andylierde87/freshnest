@@ -1,16 +1,21 @@
-# Freshnest — App Store Connect metadata
+# PantryPulse — App Store Connect metadata
+
+> Note: the marketing domain is still `frshnest.xyz` (not renamed — a domain
+> change would need a new domain purchase/DNS setup). The site content itself
+> now says "PantryPulse" throughout; only the URL keeps the old name.
 
 ## Name (30 chars max)
-Freshnest
+PantryPulse
+(if this exact word is already taken, use "PantryPulse: Food Tracker" — 25 chars)
 
 ## Subtitle (30 chars max)
 Track produce freshness
 
 ## Promotional Text (170 chars max, editable anytime without review)
-Know what to eat first. Freshnest tracks your fruits and vegetables, estimates freshness on-device, and never sends a photo or byte of data anywhere.
+Know what to eat first. PantryPulse tracks your fruits and vegetables, estimates freshness on-device, and never sends a photo or byte of data anywhere.
 
 ## Description
-Freshnest is an offline-first assistant for the fruits and vegetables in your kitchen. No account, no cloud, no subscriptions — everything runs on your device.
+PantryPulse is an offline-first assistant for the fruits and vegetables in your kitchen. No account, no cloud, no subscriptions — everything runs on your device.
 
 WHAT IT DOES
 • Kitchen — every batch you own, filterable by fridge, counter, freezer, or what needs eating first
@@ -24,7 +29,7 @@ HOW FRESHNESS SCORING WORKS
 Every item gets a 0–100 score, recalculated from purchase date, storage location, ripeness, and any photo scan:
 90–100 Very Fresh · 75–89 Fresh · 55–74 Use Soon · 30–54 Eat Today · 0–29 Check Carefully
 
-Freshnest is a visual-condition estimator, not a food-safety diagnostic tool. It will say "check carefully," never "safe to eat" — always check smell, texture, and the inside of the food yourself.
+PantryPulse is a visual-condition estimator, not a food-safety diagnostic tool. It will say "check carefully," never "safe to eat" — always check smell, texture, and the inside of the food yourself.
 
 PRIVATE BY DESIGN
 • No account or sign-in required
@@ -39,17 +44,17 @@ Built for iPhone and iPad, with an adaptive layout, full Dynamic Type and VoiceO
 produce,fridge,freshness,fruit,vegetable,food waste,pantry,kitchen,grocery,expiration,storage
 
 ## What's New in This Version (for first release)
-Welcome to Freshnest — track produce freshness, scan items for a visual condition estimate, and get storage and rescue-recipe suggestions, all fully offline.
+Welcome to PantryPulse — track produce freshness, scan items for a visual condition estimate, and get storage and rescue-recipe suggestions, all fully offline.
 
 ## Category
 Primary: Food & Drink
 Secondary: Lifestyle (optional)
 
 ## Age Rating Questionnaire
-Answer "None" / "No" to every content question (violence, gambling, mature content, etc.) — Freshnest has no user-generated content, no web access, and no objectionable material. Expected result: Age 4+.
+Answer "None" / "No" to every content question (violence, gambling, mature content, etc.) — PantryPulse has no user-generated content, no web access, and no objectionable material. Expected result: Age 4+.
 
 ## Copyright
-© 2026 Freshnest
+© 2026 PantryPulse
 (replace with your legal name/entity if you'd like something else)
 
 ## Pricing
@@ -58,12 +63,12 @@ Free. Available in all App Store territories except: United States (US), China m
 ## App Review Information
 - Contact email: andylierde87@icloud.com
 - Sign-in required: No
-- Demo account: Not applicable — Freshnest has no accounts, sign-in, or server backend of any kind.
+- Demo account: Not applicable — PantryPulse has no accounts, sign-in, or server backend of any kind.
 
 ### Notes for the reviewer (paste into the "Notes" field — ~3,750 characters)
 
 OVERVIEW
-Freshnest tracks how fresh the fruits/vegetables in a kitchen are. No account, no backend, no network requests — everything below works in Airplane Mode. A local database of ~60 produce items (shelf life, ripening, storage tips) ships inside the app.
+PantryPulse tracks how fresh the fruits/vegetables in a kitchen are. No account, no backend, no network requests — everything below works in Airplane Mode. A local database of ~60 produce items (shelf life, ripening, storage tips) ships inside the app.
 
 GETTING TEST DATA IN
 Home/Kitchen start empty (no demo account exists to log into). To populate them: Home tab > "Add Food" (or + on Kitchen) > search an item (e.g. "Banana") > set quantity/storage/ripeness > confirm. Repeat 2-3 times — Home, Kitchen, Rescue, and Insights then populate with real content.
@@ -84,7 +89,7 @@ PERMISSIONS
 - Notifications: only requested if reminders are turned on in Settings; the app is fully usable with them off.
 
 DISCLAIMER BY DESIGN
-Freshnest never claims to diagnose food safety. It only ever says things like "Looks fresh," "Use soon," or "Check carefully" — never "safe/unsafe to eat." This is stated on the Scan result screen and in the Privacy Policy.
+PantryPulse never claims to diagnose food safety. It only ever says things like "Looks fresh," "Use soon," or "Check carefully" — never "safe/unsafe to eat." This is stated on the Scan result screen and in the Privacy Policy.
 
 ## URLs
 - Marketing URL: https://frshnest.xyz

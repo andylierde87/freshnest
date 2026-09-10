@@ -24,7 +24,7 @@ enum ModelContainerFactory {
 
         let fallbackConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         guard let fallback = try? ModelContainer(for: schema, configurations: [fallbackConfiguration]) else {
-            fatalError("Freshnest could not create a SwiftData container, even in-memory.")
+            fatalError("PantryPulse could not create a SwiftData container, even in-memory.")
         }
         return fallback
     }

@@ -107,7 +107,7 @@ struct HomeView: View {
             Text(greeting)
                 .font(FreshnestTypography.secondary)
                 .foregroundStyle(FreshnestColors.secondaryText)
-            Text("Freshnest")
+            Text("PantryPulse")
                 .font(FreshnestTypography.largeTitle)
                 .foregroundStyle(FreshnestColors.primaryText)
         }

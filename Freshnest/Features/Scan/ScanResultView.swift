@@ -28,7 +28,7 @@ struct ScanResultView: View {
 
                 observationsSection
 
-                Text("Visual estimate only. Freshnest cannot confirm food safety. Check smell, texture, and the inside of the food before eating.")
+                Text("Visual estimate only. PantryPulse cannot confirm food safety. Check smell, texture, and the inside of the food before eating.")
                     .font(.caption)
                     .foregroundStyle(FreshnestColors.tertiaryText)
                     .multilineTextAlignment(.center)

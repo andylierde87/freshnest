@@ -15,13 +15,13 @@ struct OnboardingView: View {
     private let pages: [OnboardingPage] = [
         OnboardingPage(
             symbolName: "leaf.fill",
-            title: String(localized: "Freshnest"),
+            title: String(localized: "PantryPulse"),
             message: String(localized: "Keep your produce fresh longer.")
         ),
         OnboardingPage(
             symbolName: "checklist",
             title: String(localized: "Know what to eat first."),
-            message: String(localized: "Freshnest prioritizes produce using storage, ripeness, age, and freshness.")
+            message: String(localized: "PantryPulse prioritizes produce using storage, ripeness, age, and freshness.")
         ),
         OnboardingPage(
             symbolName: "camera.viewfinder",
