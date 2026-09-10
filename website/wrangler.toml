@@ -1,0 +1,18 @@
+name = "tiny-rain-6aee"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+routes = [
+  { pattern = "frshnest.xyz", custom_domain = true }
+]
+
+# Required for the support form (POST /api/contact) to actually send email:
+#   wrangler secret put RESEND_API_KEY
+# Get a free key at https://resend.com after creating an account.
+
+[vars]
+# Optional: once you verify your own sending domain in Resend, set this to
+# something like "Freshnest <support@yourdomain.com>" and redeploy.
+# Until then the Resend sandbox address (onboarding@resend.dev) is used,
+# which works without a verified domain.
+# CONTACT_FROM_EMAIL = "Freshnest <support@yourdomain.com>"

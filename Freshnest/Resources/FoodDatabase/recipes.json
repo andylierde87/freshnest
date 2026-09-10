@@ -1,0 +1,312 @@
+[
+  {
+    "id": "avocadoToast",
+    "name": "Avocado Toast",
+    "requiredFoodIDs": [
+      "avocado"
+    ],
+    "optionalFoodIDs": [
+      "tomato",
+      "lemon"
+    ],
+    "steps": [
+      "Mash the avocado with a pinch of salt and lemon juice.",
+      "Spread on toasted bread.",
+      "Top with sliced tomato if using."
+    ],
+    "tags": [
+      "quick",
+      "breakfast"
+    ]
+  },
+  {
+    "id": "freshSalad",
+    "name": "Fresh Salad",
+    "requiredFoodIDs": [
+      "tomato",
+      "cucumber",
+      "onion"
+    ],
+    "optionalFoodIDs": [
+      "bellPepper",
+      "lettuce"
+    ],
+    "steps": [
+      "Chop the tomato, cucumber and onion.",
+      "Toss together with olive oil, salt and pepper."
+    ],
+    "tags": [
+      "quick",
+      "salad"
+    ]
+  },
+  {
+    "id": "fruitSmoothie",
+    "name": "Smoothie",
+    "requiredFoodIDs": [
+      "banana",
+      "strawberry"
+    ],
+    "optionalFoodIDs": [
+      "blueberry",
+      "spinach",
+      "mint"
+    ],
+    "steps": [
+      "Add all fruit to a blender with a splash of milk or juice.",
+      "Blend until smooth."
+    ],
+    "tags": [
+      "quick",
+      "breakfast"
+    ]
+  },
+  {
+    "id": "fruitSalad",
+    "name": "Fruit Salad",
+    "requiredFoodIDs": [
+      "apple",
+      "orange",
+      "grape"
+    ],
+    "optionalFoodIDs": [
+      "mint"
+    ],
+    "steps": [
+      "Chop the apple and orange into bite-size pieces.",
+      "Combine with the grapes.",
+      "Garnish with mint if using."
+    ],
+    "tags": [
+      "dessert",
+      "quick"
+    ]
+  },
+  {
+    "id": "guacamole",
+    "name": "Guacamole",
+    "requiredFoodIDs": [
+      "avocado",
+      "lime",
+      "onion"
+    ],
+    "optionalFoodIDs": [
+      "cilantro",
+      "tomato"
+    ],
+    "steps": [
+      "Mash the avocado.",
+      "Mix in lime juice and finely chopped onion.",
+      "Fold in cilantro and tomato if using."
+    ],
+    "tags": [
+      "snack",
+      "quick"
+    ]
+  },
+  {
+    "id": "veggieStirFry",
+    "name": "Veggie Stir-Fry",
+    "requiredFoodIDs": [
+      "broccoli",
+      "carrot",
+      "bellPepper"
+    ],
+    "optionalFoodIDs": [
+      "onion",
+      "garlic",
+      "ginger"
+    ],
+    "steps": [
+      "Chop all vegetables into bite-size pieces.",
+      "Stir-fry in a hot pan with oil for 5\u20137 minutes.",
+      "Season to taste."
+    ],
+    "tags": [
+      "dinner",
+      "stirFry"
+    ]
+  },
+  {
+    "id": "vegetableSoup",
+    "name": "Vegetable Soup",
+    "requiredFoodIDs": [
+      "carrot",
+      "celery",
+      "onion"
+    ],
+    "optionalFoodIDs": [
+      "potato",
+      "leek",
+      "garlic"
+    ],
+    "steps": [
+      "Chop all vegetables.",
+      "Simmer in stock for 20\u201325 minutes until tender.",
+      "Blend or serve chunky."
+    ],
+    "tags": [
+      "dinner",
+      "soup"
+    ]
+  },
+  {
+    "id": "freshSalsa",
+    "name": "Fresh Salsa",
+    "requiredFoodIDs": [
+      "tomato",
+      "onion",
+      "cilantro"
+    ],
+    "optionalFoodIDs": [
+      "lime",
+      "bellPepper",
+      "corn"
+    ],
+    "steps": [
+      "Finely dice the tomato and onion.",
+      "Mix with chopped cilantro and a squeeze of lime."
+    ],
+    "tags": [
+      "snack",
+      "quick"
+    ]
+  },
+  {
+    "id": "greenSmoothie",
+    "name": "Green Smoothie",
+    "requiredFoodIDs": [
+      "spinach",
+      "banana"
+    ],
+    "optionalFoodIDs": [
+      "kiwi",
+      "mint"
+    ],
+    "steps": [
+      "Blend spinach and banana with a splash of water or milk.",
+      "Add kiwi or mint for extra flavor."
+    ],
+    "tags": [
+      "breakfast",
+      "quick"
+    ]
+  },
+  {
+    "id": "roastedRootVegetables",
+    "name": "Roasted Root Vegetables",
+    "requiredFoodIDs": [
+      "carrot",
+      "beet",
+      "sweetPotato"
+    ],
+    "optionalFoodIDs": [
+      "rosemary",
+      "onion"
+    ],
+    "steps": [
+      "Chop the vegetables into even chunks.",
+      "Toss with oil and roast at 200\u00b0C (400\u00b0F) for 30\u201335 minutes."
+    ],
+    "tags": [
+      "dinner",
+      "roast"
+    ]
+  },
+  {
+    "id": "berryMix",
+    "name": "Mixed Berry Bowl",
+    "requiredFoodIDs": [
+      "strawberry",
+      "blueberry",
+      "raspberry"
+    ],
+    "optionalFoodIDs": [
+      "mint"
+    ],
+    "steps": [
+      "Combine all berries in a bowl.",
+      "Garnish with mint if using."
+    ],
+    "tags": [
+      "dessert",
+      "quick"
+    ]
+  },
+  {
+    "id": "citrusSalad",
+    "name": "Citrus Salad",
+    "requiredFoodIDs": [
+      "orange",
+      "grapefruit"
+    ],
+    "optionalFoodIDs": [
+      "mint"
+    ],
+    "steps": [
+      "Peel and segment the citrus.",
+      "Arrange on a plate and garnish with mint."
+    ],
+    "tags": [
+      "dessert",
+      "quick"
+    ]
+  },
+  {
+    "id": "mashedPotatoes",
+    "name": "Mashed Potatoes",
+    "requiredFoodIDs": [
+      "potato"
+    ],
+    "optionalFoodIDs": [
+      "garlic"
+    ],
+    "steps": [
+      "Boil the potatoes until tender.",
+      "Mash with butter, milk and roasted garlic if using."
+    ],
+    "tags": [
+      "dinner",
+      "sideDish"
+    ]
+  },
+  {
+    "id": "pumpkinSoup",
+    "name": "Pumpkin Soup",
+    "requiredFoodIDs": [
+      "pumpkin"
+    ],
+    "optionalFoodIDs": [
+      "onion",
+      "garlic"
+    ],
+    "steps": [
+      "Roast or simmer the pumpkin until soft.",
+      "Blend with stock, saut\u00e9ed onion and garlic."
+    ],
+    "tags": [
+      "dinner",
+      "soup"
+    ]
+  },
+  {
+    "id": "capreseStyleSalad",
+    "name": "Tomato & Basil Salad",
+    "requiredFoodIDs": [
+      "tomato",
+      "basil"
+    ],
+    "optionalFoodIDs": [
+      "onion"
+    ],
+    "steps": [
+      "Slice the tomatoes.",
+      "Layer with torn basil leaves.",
+      "Drizzle with olive oil."
+    ],
+    "tags": [
+      "quick",
+      "salad"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+workflows:
+  freshnest-tests:
+    name: Freshnest - Unit & UI Tests
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      xcode: latest
+      vars:
+        XCODE_PROJECT: "Freshnest.xcodeproj"
+        XCODE_SCHEME: "Freshnest"
+    scripts:
+      - name: Run unit tests (iPhone simulator)
+        script: |
+          xcodebuild \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -only-testing:FreshnestTests \
+            test
+      - name: Run critical UI tests (iPhone simulator)
+        script: |
+          xcodebuild \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -only-testing:FreshnestUITests \
+            test
+    artifacts:
+      - build/ios/**/*.xcresult
+
+  freshnest-ipad-tests:
+    name: Freshnest - iPad Layout Tests
+    max_build_duration: 30
+    instance_type: mac_mini_m2
+    environment:
+      xcode: latest
+      vars:
+        XCODE_PROJECT: "Freshnest.xcodeproj"
+        XCODE_SCHEME: "Freshnest"
+    scripts:
+      - name: Run iPad layout UI tests
+        script: |
+          xcodebuild \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M4)' \
+            -only-testing:FreshnestUITests/iPadLayoutUITests \
+            test
+
+  freshnest-release:
+    name: Freshnest - App Store Build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: freshnest_app_store_connect
+    environment:
+      xcode: latest
+      vars:
+        XCODE_PROJECT: "Freshnest.xcodeproj"
+        XCODE_SCHEME: "Freshnest"
+        BUNDLE_ID: "com.freshnest.tool"
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: "com.freshnest.tool"
+    scripts:
+      - name: Run unit tests before release build
+        script: |
+          xcodebuild \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -only-testing:FreshnestTests \
+            test
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
+      - name: Bump build number
+        script: |
+          agvtool new-version -all "$(($(app-store-connect get-latest-app-store-build-number "$BUNDLE_ID") + 1))"
+      - name: Build and archive
+        script: |
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false

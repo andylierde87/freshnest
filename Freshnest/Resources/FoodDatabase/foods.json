@@ -1,0 +1,1907 @@
+[
+  {
+    "id": "apple",
+    "name": "Apple",
+    "category": "fruit",
+    "aliases": [
+      "apples"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 28,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Keep in the fridge crisper for the longest life.",
+      "Store away from leafy greens \u2014 apples release ethylene."
+    ],
+    "ripenessTips": [
+      "Apples are sold ready to eat and won't ripen much further."
+    ],
+    "freezingTips": [
+      "Slice and freeze for baking; texture softens after thawing."
+    ],
+    "rescueTags": [
+      "baking",
+      "salad",
+      "smoothie"
+    ]
+  },
+  {
+    "id": "banana",
+    "name": "Banana",
+    "category": "fruit",
+    "aliases": [
+      "bananas"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 8,
+    "freezerShelfLifeDays": 90,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store on the counter, away from other produce.",
+      "Once ripe, the peel darkens faster in the fridge but the fruit stays fine to eat."
+    ],
+    "ripenessTips": [
+      "Green bananas ripen in 2\u20134 days at room temperature.",
+      "Yellow with small brown spots means peak ripeness."
+    ],
+    "freezingTips": [
+      "Peel and freeze overripe bananas for smoothies or baking."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "baking"
+    ]
+  },
+  {
+    "id": "avocado",
+    "name": "Avocado",
+    "category": "fruit",
+    "aliases": [
+      "avocados",
+      "avocadoes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 150,
+    "ripeningDays": 4,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Ripens quickly near bananas and apples.",
+      "Move to the fridge once ripe to slow further softening."
+    ],
+    "ripenessTips": [
+      "Gently press near the stem \u2014 a slight give means it's ripe."
+    ],
+    "freezingTips": [
+      "Mash with lemon juice before freezing to reduce browning."
+    ],
+    "rescueTags": [
+      "toast",
+      "salad",
+      "guacamole"
+    ]
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "category": "fruit",
+    "aliases": [
+      "strawberries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 5,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Keep unwashed in the fridge until ready to eat.",
+      "Line the container with a paper towel to absorb moisture."
+    ],
+    "ripenessTips": [
+      "Strawberries do not continue to ripen after picking."
+    ],
+    "freezingTips": [
+      "Hull and freeze on a tray before bagging to avoid clumping."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "blueberry",
+    "name": "Blueberry",
+    "category": "fruit",
+    "aliases": [
+      "blueberries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Keep refrigerated and only wash right before eating."
+    ],
+    "ripenessTips": [
+      "Deep blue color with a light dusty bloom indicates ripeness."
+    ],
+    "freezingTips": [
+      "Freeze dry on a tray, then transfer to a bag."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "baking"
+    ]
+  },
+  {
+    "id": "raspberry",
+    "name": "Raspberry",
+    "category": "fruit",
+    "aliases": [
+      "raspberries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 3,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Very delicate \u2014 store in a single layer in the fridge."
+    ],
+    "ripenessTips": [
+      "Raspberries do not ripen further once picked."
+    ],
+    "freezingTips": [
+      "Freeze on a tray before bagging."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "blackberry",
+    "name": "Blackberry",
+    "category": "fruit",
+    "aliases": [
+      "blackberries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 4,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store unwashed in the fridge in a ventilated container."
+    ],
+    "ripenessTips": [
+      "Deep black, plump berries are fully ripe."
+    ],
+    "freezingTips": [
+      "Freeze on a tray before bagging."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "baking"
+    ]
+  },
+  {
+    "id": "grape",
+    "name": "Grapes",
+    "category": "fruit",
+    "aliases": [
+      "grape",
+      "grapes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Keep unwashed in a ventilated bag in the fridge."
+    ],
+    "ripenessTips": [
+      "Grapes do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Freeze whole for a frozen snack."
+    ],
+    "rescueTags": [
+      "salad",
+      "snack"
+    ]
+  },
+  {
+    "id": "orange",
+    "name": "Orange",
+    "category": "fruit",
+    "aliases": [
+      "oranges"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 28,
+    "freezerShelfLifeDays": 90,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store at room temperature for short term or fridge for longer life."
+    ],
+    "ripenessTips": [
+      "Oranges are picked ripe and do not ripen further."
+    ],
+    "freezingTips": [
+      "Freeze segments or juice; texture changes when thawed."
+    ],
+    "rescueTags": [
+      "salad",
+      "juice"
+    ]
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "category": "fruit",
+    "aliases": [
+      "lemons"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 30,
+    "freezerShelfLifeDays": 120,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Keeps longer in the fridge crisper drawer."
+    ],
+    "ripenessTips": [
+      "Lemons do not ripen further after picking."
+    ],
+    "freezingTips": [
+      "Freeze juice or zest in small portions."
+    ],
+    "rescueTags": [
+      "dressing",
+      "marinade"
+    ]
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "category": "fruit",
+    "aliases": [
+      "limes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 28,
+    "freezerShelfLifeDays": 120,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Keeps longer in the fridge crisper drawer."
+    ],
+    "ripenessTips": [
+      "Limes do not ripen further after picking."
+    ],
+    "freezingTips": [
+      "Freeze juice or zest in small portions."
+    ],
+    "rescueTags": [
+      "dressing",
+      "marinade"
+    ]
+  },
+  {
+    "id": "grapefruit",
+    "name": "Grapefruit",
+    "category": "fruit",
+    "aliases": [
+      "grapefruits"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 90,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store in the fridge for the longest life."
+    ],
+    "ripenessTips": [
+      "Grapefruit does not ripen further once picked."
+    ],
+    "freezingTips": [
+      "Freeze segments in their juice."
+    ],
+    "rescueTags": [
+      "salad",
+      "juice"
+    ]
+  },
+  {
+    "id": "mango",
+    "name": "Mango",
+    "category": "fruit",
+    "aliases": [
+      "mangoes",
+      "mangos"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 4,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Ripen on the counter, then move to the fridge."
+    ],
+    "ripenessTips": [
+      "A slight give and fruity aroma near the stem means it's ripe."
+    ],
+    "freezingTips": [
+      "Peel, cube and freeze on a tray before bagging."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salsa"
+    ]
+  },
+  {
+    "id": "pineapple",
+    "name": "Pineapple",
+    "category": "fruit",
+    "aliases": [
+      "pineapples"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 2,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store whole at room temperature; refrigerate once cut."
+    ],
+    "ripenessTips": [
+      "A sweet smell at the base and slightly soft shell mean it's ripe."
+    ],
+    "freezingTips": [
+      "Cube and freeze on a tray before bagging."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salsa"
+    ]
+  },
+  {
+    "id": "watermelon",
+    "name": "Watermelon",
+    "category": "fruit",
+    "aliases": [
+      "watermelons"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 60,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store whole at room temperature; refrigerate once cut and covered."
+    ],
+    "ripenessTips": [
+      "Watermelon does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Freezing changes texture; best used in smoothies after thawing."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "cantaloupe",
+    "name": "Cantaloupe",
+    "category": "fruit",
+    "aliases": [
+      "cantaloupes",
+      "muskmelon"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 4,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 60,
+    "ripeningDays": 2,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Refrigerate once cut and covered."
+    ],
+    "ripenessTips": [
+      "A sweet smell at the stem end and slight give mean it's ripe."
+    ],
+    "freezingTips": [
+      "Cube and freeze for smoothies."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "honeydewMelon",
+    "name": "Honeydew Melon",
+    "category": "fruit",
+    "aliases": [
+      "honeydew",
+      "honeydews"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 60,
+    "ripeningDays": 3,
+    "ethyleneProduction": "medium",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Refrigerate once cut and covered."
+    ],
+    "ripenessTips": [
+      "A slightly waxy rind and faint sweet smell mean it's ripe."
+    ],
+    "freezingTips": [
+      "Cube and freeze for smoothies."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "kiwi",
+    "name": "Kiwi",
+    "category": "fruit",
+    "aliases": [
+      "kiwis",
+      "kiwifruit"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 150,
+    "ripeningDays": 4,
+    "ethyleneProduction": "medium",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Ripen on the counter away from other ethylene producers, then refrigerate."
+    ],
+    "ripenessTips": [
+      "A slight give when gently pressed means it's ripe."
+    ],
+    "freezingTips": [
+      "Peel and slice before freezing."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "peach",
+    "name": "Peach",
+    "category": "fruit",
+    "aliases": [
+      "peaches"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Ripen on the counter, then refrigerate to slow further ripening."
+    ],
+    "ripenessTips": [
+      "A fragrant smell and slight give near the stem mean it's ripe."
+    ],
+    "freezingTips": [
+      "Slice and freeze with a little lemon juice."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "baking"
+    ]
+  },
+  {
+    "id": "plum",
+    "name": "Plum",
+    "category": "fruit",
+    "aliases": [
+      "plums"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Ripen on the counter, then refrigerate."
+    ],
+    "ripenessTips": [
+      "A slight give when gently pressed means it's ripe."
+    ],
+    "freezingTips": [
+      "Halve, pit, and freeze on a tray."
+    ],
+    "rescueTags": [
+      "baking",
+      "smoothie"
+    ]
+  },
+  {
+    "id": "nectarine",
+    "name": "Nectarine",
+    "category": "fruit",
+    "aliases": [
+      "nectarines"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Ripen on the counter, then refrigerate."
+    ],
+    "ripenessTips": [
+      "A fragrant smell and slight give mean it's ripe."
+    ],
+    "freezingTips": [
+      "Slice and freeze with a little lemon juice."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "baking"
+    ]
+  },
+  {
+    "id": "pear",
+    "name": "Pear",
+    "category": "fruit",
+    "aliases": [
+      "pears"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 4,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 4,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Ripen on the counter, then refrigerate to hold at peak ripeness."
+    ],
+    "ripenessTips": [
+      "Gently press near the stem \u2014 a slight give means it's ripe."
+    ],
+    "freezingTips": [
+      "Slice, poach or freeze with a little lemon juice."
+    ],
+    "rescueTags": [
+      "baking",
+      "salad"
+    ]
+  },
+  {
+    "id": "cherry",
+    "name": "Cherry",
+    "category": "fruit",
+    "aliases": [
+      "cherries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Keep unwashed in the fridge until ready to eat."
+    ],
+    "ripenessTips": [
+      "Cherries do not ripen further once picked."
+    ],
+    "freezingTips": [
+      "Pit and freeze on a tray before bagging."
+    ],
+    "rescueTags": [
+      "baking",
+      "snack"
+    ]
+  },
+  {
+    "id": "pomegranate",
+    "name": "Pomegranate",
+    "category": "fruit",
+    "aliases": [
+      "pomegranates"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 60,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Whole fruit keeps well in the fridge for weeks."
+    ],
+    "ripenessTips": [
+      "Pomegranates do not ripen further once picked."
+    ],
+    "freezingTips": [
+      "Freeze the arils in a single layer before bagging."
+    ],
+    "rescueTags": [
+      "salad",
+      "snack"
+    ]
+  },
+  {
+    "id": "papaya",
+    "name": "Papaya",
+    "category": "fruit",
+    "aliases": [
+      "papayas"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 4,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Ripen on the counter, then refrigerate."
+    ],
+    "ripenessTips": [
+      "Yellow-orange skin with a slight give means it's ripe."
+    ],
+    "freezingTips": [
+      "Peel, cube and freeze for smoothies."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salsa"
+    ]
+  },
+  {
+    "id": "fig",
+    "name": "Fig",
+    "category": "fruit",
+    "aliases": [
+      "figs"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 5,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 2,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Very delicate \u2014 refrigerate and use quickly."
+    ],
+    "ripenessTips": [
+      "A slight give and drooping stem mean it's ripe."
+    ],
+    "freezingTips": [
+      "Freeze whole on a tray before bagging."
+    ],
+    "rescueTags": [
+      "baking",
+      "snack"
+    ]
+  },
+  {
+    "id": "broccoli",
+    "name": "Broccoli",
+    "category": "vegetable",
+    "aliases": [
+      "broccolis"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store unwashed in a perforated bag in the fridge.",
+      "Keep away from apples and bananas."
+    ],
+    "ripenessTips": [
+      "Broccoli does not continue to ripen after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing to preserve color and texture."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup"
+    ]
+  },
+  {
+    "id": "cauliflower",
+    "name": "Cauliflower",
+    "category": "vegetable",
+    "aliases": [
+      "cauliflowers"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store unwashed in a perforated bag in the fridge."
+    ],
+    "ripenessTips": [
+      "Cauliflower does not continue to ripen after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup"
+    ]
+  },
+  {
+    "id": "carrot",
+    "name": "Carrot",
+    "category": "vegetable",
+    "aliases": [
+      "carrots"
+    ],
+    "iconName": "carrot.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 35,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Remove leafy tops before storing.",
+      "Keep in the crisper drawer away from ethylene producers."
+    ],
+    "ripenessTips": [
+      "Carrots do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch and slice before freezing."
+    ],
+    "rescueTags": [
+      "soup",
+      "stirFry",
+      "salad"
+    ]
+  },
+  {
+    "id": "potato",
+    "name": "Potato",
+    "category": "vegetable",
+    "aliases": [
+      "potatoes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 21,
+    "fridgeShelfLifeDays": 45,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in a cool, dark, ventilated place \u2014 not the fridge.",
+      "Keep away from onions to slow sprouting."
+    ],
+    "ripenessTips": [
+      "Potatoes do not ripen and are best stored away from light."
+    ],
+    "freezingTips": [
+      "Best frozen after cooking; raw potatoes turn watery."
+    ],
+    "rescueTags": [
+      "soup",
+      "roast"
+    ]
+  },
+  {
+    "id": "sweetPotato",
+    "name": "Sweet Potato",
+    "category": "vegetable",
+    "aliases": [
+      "sweet potatoes",
+      "yams"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 21,
+    "fridgeShelfLifeDays": 35,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store in a cool, dark, ventilated place \u2014 not the fridge."
+    ],
+    "ripenessTips": [
+      "Sweet potatoes do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Best frozen after cooking."
+    ],
+    "rescueTags": [
+      "soup",
+      "roast"
+    ]
+  },
+  {
+    "id": "onion",
+    "name": "Onion",
+    "category": "vegetable",
+    "aliases": [
+      "onions"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 30,
+    "fridgeShelfLifeDays": 60,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store in a cool, dry, ventilated place away from potatoes."
+    ],
+    "ripenessTips": [
+      "Onions do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze raw for cooked dishes."
+    ],
+    "rescueTags": [
+      "soup",
+      "stirFry",
+      "salsa"
+    ]
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "category": "vegetable",
+    "aliases": [
+      "garlics",
+      "garlic bulb"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 90,
+    "fridgeShelfLifeDays": 120,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store in a cool, dry, ventilated place, not the fridge."
+    ],
+    "ripenessTips": [
+      "Garlic does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Peel cloves and freeze whole or minced."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup",
+      "marinade"
+    ]
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato",
+    "category": "vegetable",
+    "aliases": [
+      "tomatoes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 3,
+    "ethyleneProduction": "high",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store at room temperature out of direct sun for best flavor.",
+      "Refrigerate only once fully ripe to slow further softening."
+    ],
+    "ripenessTips": [
+      "Deep, even color and slight give mean it's ripe."
+    ],
+    "freezingTips": [
+      "Freeze whole for cooked sauces; texture softens when thawed."
+    ],
+    "rescueTags": [
+      "salad",
+      "salsa",
+      "sauce"
+    ]
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "category": "vegetable",
+    "aliases": [
+      "cucumbers"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 30,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in the fridge crisper, away from ethylene producers like bananas and tomatoes."
+    ],
+    "ripenessTips": [
+      "Cucumbers do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Not recommended fresh; best pickled instead."
+    ],
+    "rescueTags": [
+      "salad",
+      "pickle"
+    ]
+  },
+  {
+    "id": "bellPepper",
+    "name": "Bell Pepper",
+    "category": "vegetable",
+    "aliases": [
+      "bell peppers",
+      "peppers",
+      "capsicum"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 4,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 1,
+    "ethyleneProduction": "low",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store unwashed in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Firm, glossy skin with even color means it's at peak freshness."
+    ],
+    "freezingTips": [
+      "Slice and freeze raw; great for cooked dishes."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "salad",
+      "salsa"
+    ]
+  },
+  {
+    "id": "zucchini",
+    "name": "Zucchini",
+    "category": "vegetable",
+    "aliases": [
+      "zucchinis",
+      "courgette"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store unwashed in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Zucchini does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Slice or grate and blanch before freezing."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup",
+      "baking"
+    ]
+  },
+  {
+    "id": "eggplant",
+    "name": "Eggplant",
+    "category": "vegetable",
+    "aliases": [
+      "eggplants",
+      "aubergine"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 4,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in a cool spot, ideally not the coldest part of the fridge."
+    ],
+    "ripenessTips": [
+      "Glossy, taut skin means it's at peak freshness."
+    ],
+    "freezingTips": [
+      "Best frozen after cooking or blanching."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "roast"
+    ]
+  },
+  {
+    "id": "spinach",
+    "name": "Spinach",
+    "category": "vegetable",
+    "aliases": [
+      "spinaches"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in a perforated bag in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Spinach does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing to preserve texture."
+    ],
+    "rescueTags": [
+      "salad",
+      "smoothie",
+      "soup"
+    ]
+  },
+  {
+    "id": "kale",
+    "name": "Kale",
+    "category": "vegetable",
+    "aliases": [
+      "kales"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in a perforated bag in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Kale does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "salad",
+      "smoothie",
+      "soup"
+    ]
+  },
+  {
+    "id": "lettuce",
+    "name": "Lettuce",
+    "category": "vegetable",
+    "aliases": [
+      "lettuces"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 0,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store in a perforated bag in the fridge, away from fruit."
+    ],
+    "ripenessTips": [
+      "Lettuce does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Not recommended \u2014 leaves wilt badly when thawed."
+    ],
+    "rescueTags": [
+      "salad"
+    ]
+  },
+  {
+    "id": "cabbage",
+    "name": "Cabbage",
+    "category": "vegetable",
+    "aliases": [
+      "cabbages"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 30,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store whole and unwashed in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Cabbage does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "salad",
+      "stirFry",
+      "soup"
+    ]
+  },
+  {
+    "id": "celery",
+    "name": "Celery",
+    "category": "vegetable",
+    "aliases": [
+      "celeries",
+      "celery stalk"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Wrap tightly and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Celery does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze raw for soups and stocks."
+    ],
+    "rescueTags": [
+      "soup",
+      "stirFry"
+    ]
+  },
+  {
+    "id": "asparagus",
+    "name": "Asparagus",
+    "category": "vegetable",
+    "aliases": [
+      "asparaguses"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 5,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Trim the ends and stand upright in a little water in the fridge."
+    ],
+    "ripenessTips": [
+      "Asparagus does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "roast"
+    ]
+  },
+  {
+    "id": "greenBeans",
+    "name": "Green Beans",
+    "category": "vegetable",
+    "aliases": [
+      "green bean",
+      "string beans"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store unwashed in a perforated bag in the fridge."
+    ],
+    "ripenessTips": [
+      "Green beans do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup"
+    ]
+  },
+  {
+    "id": "peas",
+    "name": "Peas",
+    "category": "vegetable",
+    "aliases": [
+      "pea",
+      "green peas"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 5,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store unshelled in the fridge; shell just before cooking."
+    ],
+    "ripenessTips": [
+      "Peas do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Shell and blanch before freezing."
+    ],
+    "rescueTags": [
+      "soup",
+      "stirFry"
+    ]
+  },
+  {
+    "id": "corn",
+    "name": "Corn",
+    "category": "vegetable",
+    "aliases": [
+      "sweet corn",
+      "corn on the cob"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 5,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Keep husks on and refrigerate until ready to cook."
+    ],
+    "ripenessTips": [
+      "Corn does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch on or off the cob before freezing."
+    ],
+    "rescueTags": [
+      "salad",
+      "soup",
+      "salsa"
+    ]
+  },
+  {
+    "id": "mushroom",
+    "name": "Mushroom",
+    "category": "vegetable",
+    "aliases": [
+      "mushrooms"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 1,
+    "fridgeShelfLifeDays": 7,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Store in a paper bag in the fridge to control moisture."
+    ],
+    "ripenessTips": [
+      "Mushrooms do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Saut\u00e9 before freezing for the best texture."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "soup"
+    ]
+  },
+  {
+    "id": "radish",
+    "name": "Radish",
+    "category": "vegetable",
+    "aliases": [
+      "radishes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 0,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Remove leafy tops and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Radishes do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Not recommended \u2014 texture becomes mushy."
+    ],
+    "rescueTags": [
+      "salad"
+    ]
+  },
+  {
+    "id": "beet",
+    "name": "Beet",
+    "category": "vegetable",
+    "aliases": [
+      "beets",
+      "beetroot"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Remove leafy tops and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Beets do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Cook before freezing for the best texture."
+    ],
+    "rescueTags": [
+      "soup",
+      "salad",
+      "roast"
+    ]
+  },
+  {
+    "id": "brusselsSprouts",
+    "name": "Brussels Sprouts",
+    "category": "vegetable",
+    "aliases": [
+      "brussels sprout"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store unwashed in a perforated bag in the fridge."
+    ],
+    "ripenessTips": [
+      "Brussels sprouts do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Blanch before freezing."
+    ],
+    "rescueTags": [
+      "roast",
+      "stirFry"
+    ]
+  },
+  {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "category": "vegetable",
+    "aliases": [
+      "pumpkins"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 60,
+    "fridgeShelfLifeDays": 90,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store whole in a cool, dry place; refrigerate once cut."
+    ],
+    "ripenessTips": [
+      "Pumpkins do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Cook and puree before freezing."
+    ],
+    "rescueTags": [
+      "soup",
+      "roast",
+      "baking"
+    ]
+  },
+  {
+    "id": "butternutSquash",
+    "name": "Butternut Squash",
+    "category": "vegetable",
+    "aliases": [
+      "squash",
+      "winter squash"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 60,
+    "fridgeShelfLifeDays": 30,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store whole in a cool, dry place; refrigerate once cut."
+    ],
+    "ripenessTips": [
+      "Squash does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Cook and cube before freezing."
+    ],
+    "rescueTags": [
+      "soup",
+      "roast"
+    ]
+  },
+  {
+    "id": "leek",
+    "name": "Leek",
+    "category": "vegetable",
+    "aliases": [
+      "leeks"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 300,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store unwashed in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Leeks do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze raw for soups."
+    ],
+    "rescueTags": [
+      "soup",
+      "stirFry"
+    ]
+  },
+  {
+    "id": "scallion",
+    "name": "Green Onion",
+    "category": "vegetable",
+    "aliases": [
+      "scallion",
+      "scallions",
+      "spring onion",
+      "green onions"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Wrap and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Green onions do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze raw as a garnish."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "salad",
+      "salsa"
+    ]
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "category": "otherProduce",
+    "aliases": [
+      "gingers",
+      "ginger root"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "piece",
+    "counterShelfLifeDays": 14,
+    "fridgeShelfLifeDays": 45,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "low",
+    "storageTips": [
+      "Store unpeeled in the fridge, or freeze whole for longer life."
+    ],
+    "ripenessTips": [
+      "Ginger does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Freeze whole and grate directly from frozen."
+    ],
+    "rescueTags": [
+      "stirFry",
+      "marinade",
+      "soup"
+    ]
+  },
+  {
+    "id": "basil",
+    "name": "Basil",
+    "category": "herb",
+    "aliases": [
+      "basils"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 5,
+    "fridgeShelfLifeDays": 3,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Keep like fresh flowers in a glass of water at room temperature \u2014 basil dislikes cold."
+    ],
+    "ripenessTips": [
+      "Basil does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop with a little oil and freeze in ice cube trays."
+    ],
+    "rescueTags": [
+      "sauce",
+      "salad",
+      "marinade"
+    ]
+  },
+  {
+    "id": "cilantro",
+    "name": "Cilantro",
+    "category": "herb",
+    "aliases": [
+      "coriander"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store stems-down in water in the fridge, loosely covered."
+    ],
+    "ripenessTips": [
+      "Cilantro does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze in ice cube trays with a little water."
+    ],
+    "rescueTags": [
+      "salsa",
+      "marinade",
+      "soup"
+    ]
+  },
+  {
+    "id": "parsley",
+    "name": "Parsley",
+    "category": "herb",
+    "aliases": [
+      "parsleys"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 14,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store stems-down in water in the fridge, loosely covered."
+    ],
+    "ripenessTips": [
+      "Parsley does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze in ice cube trays."
+    ],
+    "rescueTags": [
+      "salad",
+      "sauce",
+      "soup"
+    ]
+  },
+  {
+    "id": "mint",
+    "name": "Mint",
+    "category": "herb",
+    "aliases": [
+      "mints"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Store stems-down in water in the fridge, loosely covered."
+    ],
+    "ripenessTips": [
+      "Mint does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze in ice cube trays."
+    ],
+    "rescueTags": [
+      "smoothie",
+      "salad"
+    ]
+  },
+  {
+    "id": "dill",
+    "name": "Dill",
+    "category": "herb",
+    "aliases": [
+      "dills"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 2,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Wrap loosely and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Dill does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze in ice cube trays."
+    ],
+    "rescueTags": [
+      "sauce",
+      "salad"
+    ]
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "category": "herb",
+    "aliases": [
+      "rosemaries"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Wrap loosely and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Rosemary does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Freeze whole sprigs in a bag."
+    ],
+    "rescueTags": [
+      "roast",
+      "marinade"
+    ]
+  },
+  {
+    "id": "thyme",
+    "name": "Thyme",
+    "category": "herb",
+    "aliases": [
+      "thymes"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 7,
+    "fridgeShelfLifeDays": 21,
+    "freezerShelfLifeDays": 240,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "medium",
+    "storageTips": [
+      "Wrap loosely and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Thyme does not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Freeze whole sprigs in a bag."
+    ],
+    "rescueTags": [
+      "roast",
+      "soup",
+      "marinade"
+    ]
+  },
+  {
+    "id": "chives",
+    "name": "Chives",
+    "category": "herb",
+    "aliases": [
+      "chive"
+    ],
+    "iconName": "leaf.fill",
+    "defaultUnit": "bunch",
+    "counterShelfLifeDays": 3,
+    "fridgeShelfLifeDays": 10,
+    "freezerShelfLifeDays": 180,
+    "ripeningDays": 0,
+    "ethyleneProduction": "none",
+    "ethyleneSensitivity": "high",
+    "storageTips": [
+      "Wrap loosely and store in the fridge crisper."
+    ],
+    "ripenessTips": [
+      "Chives do not ripen further after harvest."
+    ],
+    "freezingTips": [
+      "Chop and freeze in ice cube trays."
+    ],
+    "rescueTags": [
+      "salad",
+      "sauce"
+    ]
+  }
+]

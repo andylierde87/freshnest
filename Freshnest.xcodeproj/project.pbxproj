@@ -6,19 +6,70 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3333E48555135D5E86779182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426F0163A88F5C231E880C90 /* Foundation.framework */; };
+		9BA094ECC3ADD1BE60130401 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426F0163A88F5C231E880C90 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		465C8D1A1881ED87880E1A0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D718382530517DB2004138DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D718382C30517DB2004138DC;
+			remoteInfo = Freshnest;
+		};
+		92B549E2DB679525C6FDA666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D718382530517DB2004138DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D718382C30517DB2004138DC;
+			remoteInfo = Freshnest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		426F0163A88F5C231E880C90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		896BF891F477AC455E3F98F6 /* FreshnestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshnestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D718382D30517DB2004138DC /* Freshnest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshnest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DACC3CB924B1200D5941BF82 /* FreshnestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshnestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6734CC9BD7F62E6B6564CC69 /* FreshnestUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FreshnestUITests;
+			sourceTree = "<group>";
+		};
 		D718382F30517DB2004138DC /* Freshnest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Freshnest;
 			sourceTree = "<group>";
 		};
+		F6767FDB9A7BE4473CEF1516 /* FreshnestTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FreshnestTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6691A7C45B01C88F0578ACE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3333E48555135D5E86779182 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FB39B299556A2ED174EA917 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA094ECC3ADD1BE60130401 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D718382A30517DB2004138DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,11 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C164058BEE82788F942ADD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0A97BCEC19A1AD4BCDA8D06 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D718382430517DB2004138DC = {
 			isa = PBXGroup;
 			children = (
 				D718382F30517DB2004138DC /* Freshnest */,
 				D718382E30517DB2004138DC /* Products */,
+				5C164058BEE82788F942ADD7 /* Frameworks */,
+				F6767FDB9A7BE4473CEF1516 /* FreshnestTests */,
+				6734CC9BD7F62E6B6564CC69 /* FreshnestUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,13 +103,44 @@
 			isa = PBXGroup;
 			children = (
 				D718382D30517DB2004138DC /* Freshnest.app */,
+				896BF891F477AC455E3F98F6 /* FreshnestTests.xctest */,
+				DACC3CB924B1200D5941BF82 /* FreshnestUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E0A97BCEC19A1AD4BCDA8D06 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				426F0163A88F5C231E880C90 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		907DCACBCD458030251B841B /* FreshnestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F59EF9E0758043E979E367A8 /* Build configuration list for PBXNativeTarget "FreshnestTests" */;
+			buildPhases = (
+				1DB7AC6D74449E7CB6C729A4 /* Sources */,
+				9FB39B299556A2ED174EA917 /* Frameworks */,
+				654FA3380E2A78F6FB5E94F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EB68ECE27C550979E6FDD9A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F6767FDB9A7BE4473CEF1516 /* FreshnestTests */,
+			);
+			name = FreshnestTests;
+			productName = FreshnestTests;
+			productReference = 896BF891F477AC455E3F98F6 /* FreshnestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D718382C30517DB2004138DC /* Freshnest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D718383A30517DB4004138DC /* Build configuration list for PBXNativeTarget "Freshnest" */;
@@ -64,11 +157,30 @@
 				D718382F30517DB2004138DC /* Freshnest */,
 			);
 			name = Freshnest;
-			packageProductDependencies = (
-			);
 			productName = Freshnest;
 			productReference = D718382D30517DB2004138DC /* Freshnest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E941A3E4D0A600286C3C0ADB /* FreshnestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16EBE911C6D1BB5710E13B34 /* Build configuration list for PBXNativeTarget "FreshnestUITests" */;
+			buildPhases = (
+				1A8BAF4FC0EB459C9CD73BC5 /* Sources */,
+				6691A7C45B01C88F0578ACE3 /* Frameworks */,
+				A4508F6190742B9247974FE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F7FDB0A009F165687573124 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6734CC9BD7F62E6B6564CC69 /* FreshnestUITests */,
+			);
+			name = FreshnestUITests;
+			productName = FreshnestUITests;
+			productReference = DACC3CB924B1200D5941BF82 /* FreshnestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -80,8 +192,16 @@
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
+					907DCACBCD458030251B841B = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = D718382C30517DB2004138DC;
+					};
 					D718382C30517DB2004138DC = {
 						CreatedOnToolsVersion = 26.6;
+					};
+					E941A3E4D0A600286C3C0ADB = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = D718382C30517DB2004138DC;
 					};
 				};
 			};
@@ -100,11 +220,27 @@
 			projectRoot = "";
 			targets = (
 				D718382C30517DB2004138DC /* Freshnest */,
+				907DCACBCD458030251B841B /* FreshnestTests */,
+				E941A3E4D0A600286C3C0ADB /* FreshnestUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		654FA3380E2A78F6FB5E94F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4508F6190742B9247974FE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D718382B30517DB2004138DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +251,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1A8BAF4FC0EB459C9CD73BC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DB7AC6D74449E7CB6C729A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D718382930517DB2004138DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +274,97 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2EB68ECE27C550979E6FDD9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Freshnest;
+			target = D718382C30517DB2004138DC /* Freshnest */;
+			targetProxy = 465C8D1A1881ED87880E1A0F /* PBXContainerItemProxy */;
+		};
+		9F7FDB0A009F165687573124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Freshnest;
+			target = D718382C30517DB2004138DC /* Freshnest */;
+			targetProxy = 92B549E2DB679525C6FDA666 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		102E1F24675B15450CC430DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freshnest.app/Freshnest";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		861D5246AEB677EAC4ECB74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freshnest;
+			};
+			name = Debug;
+		};
+		AC9F2CC2D942F35153838A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freshnest.app/Freshnest";
+			};
+			name = Debug;
+		};
 		D718383830517DB4004138DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -177,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -234,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -253,21 +493,22 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Freshnest uses the camera to estimate the visible freshness of your produce. Photos are analyzed on your device and are never uploaded.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Freshnest uses photos you choose to estimate the visible freshness of your produce. Photos are analyzed on your device and are never uploaded.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.Freshnest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -284,21 +525,22 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Freshnest uses the camera to estimate the visible freshness of your produce. Photos are analyzed on your device and are never uploaded.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Freshnest uses photos you choose to estimate the visible freshness of your produce. Photos are analyzed on your device and are never uploaded.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.Freshnest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -306,9 +548,43 @@
 			};
 			name = Release;
 		};
+		EF8CE0C9156CB8BC43E3A83C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freshnest.tool.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freshnest;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		16EBE911C6D1BB5710E13B34 /* Build configuration list for PBXNativeTarget "FreshnestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8CE0C9156CB8BC43E3A83C /* Release */,
+				861D5246AEB677EAC4ECB74C /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D718382830517DB2004138DC /* Build configuration list for PBXProject "Freshnest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -323,6 +599,15 @@
 			buildConfigurations = (
 				D718383B30517DB4004138DC /* Debug */,
 				D718383C30517DB4004138DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59EF9E0758043E979E367A8 /* Build configuration list for PBXNativeTarget "FreshnestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				102E1F24675B15450CC430DF /* Release */,
+				AC9F2CC2D942F35153838A91 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
