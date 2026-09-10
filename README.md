@@ -54,7 +54,7 @@ xcodebuild -project Freshnest.xcodeproj -scheme Freshnest \
 - `freshnest-tests` — unit + UI tests on an iPhone simulator (runs on every push).
 - `freshnest-ipad-tests` — the iPad-specific layout UI tests.
 - `freshnest-release` — signs and archives a build for TestFlight. Requires an
-  `app_store_connect` integration named `freshnest_app_store_connect` to be
+  `app_store_connect` integration named `mainKey` to be
   configured in the Codemagic team settings (API key + issuer ID), plus
   automatic code signing certificates/profiles managed by Codemagic.
 
