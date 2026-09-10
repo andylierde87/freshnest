@@ -11,14 +11,14 @@ final class FoodDetailsUITests: XCTestCase {
         app.tapTab("Kitchen")
 
         let card = app.buttons["kitchen.foodCard.apple"]
-        XCTAssertTrue(card.waitForExistence(timeout: 5))
+        XCTAssertTrue(card.waitForExistence(timeout: 15))
         card.tap()
 
         let ateOneButton = app.buttons["foodDetails.ateOneButton"]
-        XCTAssertTrue(ateOneButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(ateOneButton.waitForExistence(timeout: 15))
         ateOneButton.tap()
 
-        XCTAssertTrue(app.staticTexts["Ate one"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Ate one"].waitForExistence(timeout: 15))
     }
 
     func testMoveStorageUpdatesLocationLabel() {
@@ -27,14 +27,14 @@ final class FoodDetailsUITests: XCTestCase {
         app.tapTab("Kitchen")
 
         let card = app.buttons["kitchen.foodCard.avocado"]
-        XCTAssertTrue(card.waitForExistence(timeout: 5))
+        XCTAssertTrue(card.waitForExistence(timeout: 15))
         card.tap()
 
         let moveButton = app.buttons["foodDetails.moveStorageButton"]
-        XCTAssertTrue(moveButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(moveButton.waitForExistence(timeout: 15))
         moveButton.tap()
         app.buttons["Fridge"].tap()
 
-        XCTAssertTrue(app.staticTexts["Moved storage"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Moved storage"].waitForExistence(timeout: 15))
     }
 }

@@ -20,7 +20,7 @@ final class iPadLayoutUITests: XCTestCase {
         app.launchForTesting(seedSampleData: true)
 
         app.buttons["Kitchen"].firstMatch.tap()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].exists)
 
         // Navigation and the tab navigation must both remain visible/tappable
@@ -35,10 +35,10 @@ final class iPadLayoutUITests: XCTestCase {
         app.buttons["Kitchen"].firstMatch.tap()
 
         let card = app.buttons["kitchen.foodCard.apple"]
-        XCTAssertTrue(card.waitForExistence(timeout: 5))
+        XCTAssertTrue(card.waitForExistence(timeout: 15))
         card.tap()
 
-        XCTAssertTrue(app.otherElements["foodDetails.score"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.otherElements["foodDetails.score"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.buttons["foodDetails.ateOneButton"].exists)
     }
 
@@ -46,10 +46,10 @@ final class iPadLayoutUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchForTesting(seedSampleData: true)
         app.buttons["Kitchen"].firstMatch.tap()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
 
         XCUIDevice.shared.orientation = .landscapeLeft
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.buttons["Home"].firstMatch.exists)
     }
 

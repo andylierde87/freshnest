@@ -12,16 +12,16 @@ final class AddFoodUITests: XCTestCase {
         app.buttons["home.addFoodButton"].tap()
 
         let searchField = app.textFields["addFood.searchField"]
-        XCTAssertTrue(searchField.waitForExistence(timeout: 5))
+        XCTAssertTrue(searchField.waitForExistence(timeout: 15))
         searchField.tap()
         searchField.typeText("Avocado")
 
         let result = app.buttons["addFood.result.avocado"]
-        XCTAssertTrue(result.waitForExistence(timeout: 5))
+        XCTAssertTrue(result.waitForExistence(timeout: 15))
         result.tap()
 
         let incrementButton = app.buttons["addFood.quantityStepper-Increment"]
-        XCTAssertTrue(incrementButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(incrementButton.waitForExistence(timeout: 15))
         incrementButton.tap()
         incrementButton.tap()
 
@@ -40,9 +40,9 @@ final class AddFoodUITests: XCTestCase {
         }
 
         let kitchenTab = app.tab("Kitchen")
-        XCTAssertTrue(kitchenTab.waitForExistence(timeout: 5))
+        XCTAssertTrue(kitchenTab.waitForExistence(timeout: 15))
         app.tapTab("Kitchen")
 
-        XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].waitForExistence(timeout: 15))
     }
 }

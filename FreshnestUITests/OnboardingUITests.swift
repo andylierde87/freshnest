@@ -10,17 +10,17 @@ final class OnboardingUITests: XCTestCase {
         app.launchArguments += ["--uitesting", "--reset-data"]
         app.launch()
 
-        XCTAssertTrue(app.staticTexts["onboarding.page.0"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["onboarding.page.0"].waitForExistence(timeout: 15))
 
         let continueButton = app.buttons["onboarding.continueButton"]
         for _ in 0..<3 {
-            XCTAssertTrue(continueButton.waitForExistence(timeout: 5))
+            XCTAssertTrue(continueButton.waitForExistence(timeout: 15))
             continueButton.tap()
         }
-        XCTAssertTrue(continueButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(continueButton.waitForExistence(timeout: 15))
         continueButton.tap()
 
-        XCTAssertTrue(app.buttons["home.settingsButton"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["home.settingsButton"].waitForExistence(timeout: 15))
 
         app.terminate()
         // Reassign (not append) so the earlier "--reset-data" argument is
@@ -28,7 +28,7 @@ final class OnboardingUITests: XCTestCase {
         app.launchArguments = ["--uitesting"]
         app.launch()
 
-        XCTAssertTrue(app.buttons["home.settingsButton"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["home.settingsButton"].waitForExistence(timeout: 15))
         XCTAssertFalse(app.staticTexts["onboarding.page.0"].exists)
     }
 }

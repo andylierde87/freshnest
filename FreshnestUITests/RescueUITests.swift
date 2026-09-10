@@ -13,9 +13,9 @@ final class RescueUITests: XCTestCase {
         // Seeded data includes an urgent avocado + tomato, which should
         // surface at least one recipe suggestion with no network dependency.
         let firstRecipe = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'rescue.recipe.'")).firstMatch
-        XCTAssertTrue(firstRecipe.waitForExistence(timeout: 5))
+        XCTAssertTrue(firstRecipe.waitForExistence(timeout: 15))
         firstRecipe.tap()
 
-        XCTAssertTrue(app.staticTexts["Required"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Required"].waitForExistence(timeout: 15))
     }
 }

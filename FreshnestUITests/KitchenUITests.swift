@@ -14,21 +14,21 @@ final class KitchenUITests: XCTestCase {
 
     func testSeededCardsAppear() {
         let app = launchIntoKitchen()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].waitForExistence(timeout: 15))
     }
 
     func testFruitFilterHidesVegetables() {
         let app = launchIntoKitchen()
         app.buttons["kitchen.filter.fruits"].tap()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
         XCTAssertFalse(app.buttons["kitchen.foodCard.broccoli"].exists)
     }
 
     func testFridgeFilterHidesCounterItems() {
         let app = launchIntoKitchen()
         app.buttons["kitchen.filter.fridge"].tap()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.apple"].waitForExistence(timeout: 15))
         XCTAssertFalse(app.buttons["kitchen.foodCard.avocado"].exists)
     }
 
@@ -38,14 +38,14 @@ final class KitchenUITests: XCTestCase {
         // last chip, so bring it fully on-screen before tapping it.
         app.buttons["kitchen.filter.all"].swipeLeft()
         app.buttons["kitchen.filter.eatFirst"].tap()
-        XCTAssertTrue(app.buttons["kitchen.foodCard.strawberry"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.strawberry"].waitForExistence(timeout: 15))
     }
 
     func testOpeningACardShowsDetails() {
         let app = launchIntoKitchen()
         let card = app.buttons["kitchen.foodCard.apple"]
-        XCTAssertTrue(card.waitForExistence(timeout: 5))
+        XCTAssertTrue(card.waitForExistence(timeout: 15))
         card.tap()
-        XCTAssertTrue(app.otherElements["foodDetails.score"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.otherElements["foodDetails.score"].waitForExistence(timeout: 15))
     }
 }

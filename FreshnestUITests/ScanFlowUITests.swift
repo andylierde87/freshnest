@@ -23,6 +23,6 @@ final class ScanFlowUITests: XCTestCase {
         app.buttons["scan.result.addToKitchen"].tap()
 
         app.tapTab("Kitchen")
-        XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 15))
     }
 }

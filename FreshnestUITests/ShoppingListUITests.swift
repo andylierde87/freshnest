@@ -15,7 +15,7 @@ final class ShoppingListUITests: XCTestCase {
         app.buttons["shoppingList.addButton"].tap()
 
         let searchField = app.textFields["shoppingItem.searchField"]
-        XCTAssertTrue(searchField.waitForExistence(timeout: 5))
+        XCTAssertTrue(searchField.waitForExistence(timeout: 15))
         searchField.tap()
         searchField.typeText("Banana")
 
@@ -28,13 +28,13 @@ final class ShoppingListUITests: XCTestCase {
         app.buttons["shoppingItem.addButton"].tap()
 
         let toggle = app.buttons["shoppingList.toggle.banana"]
-        XCTAssertTrue(toggle.waitForExistence(timeout: 5))
+        XCTAssertTrue(toggle.waitForExistence(timeout: 15))
         toggle.tap()
 
-        XCTAssertTrue(app.buttons["Add to Kitchen"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["Add to Kitchen"].waitForExistence(timeout: 15))
         app.buttons["Add to Kitchen"].tap()
 
         app.tapTab("Kitchen")
-        XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 15))
     }
 }

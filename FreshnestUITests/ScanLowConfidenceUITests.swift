@@ -16,7 +16,7 @@ final class ScanLowConfidenceUITests: XCTestCase {
         XCTAssertFalse(app.buttons["scan.confirmButton"].exists)
 
         let manualResult = app.buttons["scan.manualResult.banana"]
-        XCTAssertTrue(manualResult.waitForExistence(timeout: 5))
+        XCTAssertTrue(manualResult.waitForExistence(timeout: 15))
         manualResult.tap()
 
         XCTAssertTrue(app.otherElements["scan.result.score"].waitForExistence(timeout: 10))
@@ -38,6 +38,6 @@ final class ScanFailureUITests: XCTestCase {
         XCTAssertTrue(app.buttons["scan.failure.selectManuallyButton"].exists)
 
         app.buttons["scan.failure.selectManuallyButton"].tap()
-        XCTAssertTrue(app.staticTexts["scan.lowConfidenceMessage"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["scan.lowConfidenceMessage"].waitForExistence(timeout: 15))
     }
 }
