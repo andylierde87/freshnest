@@ -12,7 +12,7 @@ final class ScanFlowUITests: XCTestCase {
     func testHighConfidenceScanFlowAddsBananaToKitchen() {
         let app = XCUIApplication()
         app.launchForTesting(mockScan: "highConfidenceBanana")
-        app.tabBars.buttons["Scan"].tap()
+        app.tapTab("Scan")
 
         let confirmButton = app.buttons["scan.confirmButton"]
         XCTAssertTrue(confirmButton.waitForExistence(timeout: 10))
@@ -22,7 +22,7 @@ final class ScanFlowUITests: XCTestCase {
 
         app.buttons["scan.result.addToKitchen"].tap()
 
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
         XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 5))
     }
 }

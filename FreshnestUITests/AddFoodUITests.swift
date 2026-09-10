@@ -39,10 +39,9 @@ final class AddFoodUITests: XCTestCase {
             }
         }
 
-        let kitchenTab = app.tabBars.buttons["Kitchen"]
+        let kitchenTab = app.tab("Kitchen")
         XCTAssertTrue(kitchenTab.waitForExistence(timeout: 5))
-        XCTAssertTrue(kitchenTab.waitForHittable(timeout: 5))
-        kitchenTab.tap()
+        app.tapTab("Kitchen")
 
         XCTAssertTrue(app.buttons["kitchen.foodCard.avocado"].waitForExistence(timeout: 5))
     }

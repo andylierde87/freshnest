@@ -8,7 +8,7 @@ final class FoodDetailsUITests: XCTestCase {
     func testAteOneDecrementsQuantityAndUpdatesHistory() {
         let app = XCUIApplication()
         app.launchForTesting(seedSampleData: true)
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
 
         let card = app.buttons["kitchen.foodCard.apple"]
         XCTAssertTrue(card.waitForExistence(timeout: 5))
@@ -24,7 +24,7 @@ final class FoodDetailsUITests: XCTestCase {
     func testMoveStorageUpdatesLocationLabel() {
         let app = XCUIApplication()
         app.launchForTesting(seedSampleData: true)
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
 
         let card = app.buttons["kitchen.foodCard.avocado"]
         XCTAssertTrue(card.waitForExistence(timeout: 5))

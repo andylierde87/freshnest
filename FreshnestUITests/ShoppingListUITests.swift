@@ -8,7 +8,7 @@ final class ShoppingListUITests: XCTestCase {
     func testAddPurchaseAndMoveToKitchen() {
         let app = XCUIApplication()
         app.launchForTesting()
-        app.tabBars.buttons["Home"].tap()
+        app.tapTab("Home")
         app.buttons["home.settingsButton"].tap()
         app.staticTexts["Shopping List"].tap()
 
@@ -34,7 +34,7 @@ final class ShoppingListUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Add to Kitchen"].waitForExistence(timeout: 5))
         app.buttons["Add to Kitchen"].tap()
 
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
         XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 5))
     }
 }

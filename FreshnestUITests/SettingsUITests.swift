@@ -50,7 +50,7 @@ final class SettingsUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Delete Everything"].waitForExistence(timeout: 5))
         app.buttons["Delete Everything"].tap()
 
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
         XCTAssertFalse(app.buttons["kitchen.foodCard.apple"].exists)
     }
 }

@@ -8,7 +8,7 @@ final class KitchenUITests: XCTestCase {
     private func launchIntoKitchen() -> XCUIApplication {
         let app = XCUIApplication()
         app.launchForTesting(seedSampleData: true)
-        app.tabBars.buttons["Kitchen"].tap()
+        app.tapTab("Kitchen")
         return app
     }
 

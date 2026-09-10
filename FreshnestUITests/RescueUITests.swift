@@ -8,7 +8,7 @@ final class RescueUITests: XCTestCase {
     func testUrgentProduceSurfacesACompatibleRecipe() {
         let app = XCUIApplication()
         app.launchForTesting(seedSampleData: true)
-        app.tabBars.buttons["Rescue"].tap()
+        app.tapTab("Rescue")
 
         // Seeded data includes an urgent avocado + tomato, which should
         // surface at least one recipe suggestion with no network dependency.
