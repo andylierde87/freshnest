@@ -15,3 +15,6 @@ Pods/
 
 # Codemagic local artifacts
 /build
+
+# Wrangler local cache (may contain account identifiers)
+website/.wrangler/
