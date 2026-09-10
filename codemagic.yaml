@@ -66,10 +66,10 @@ workflows:
       vars:
         XCODE_PROJECT: "Freshnest.xcodeproj"
         XCODE_SCHEME: "Freshnest"
-        BUNDLE_ID: "com.freshnest.tool"
+        BUNDLE_ID: "com.pantrypulse.ios"
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: "com.freshnest.tool"
+        bundle_identifier: "com.pantrypulse.ios"
     scripts:
       - name: Run unit tests before release build
         script: |
