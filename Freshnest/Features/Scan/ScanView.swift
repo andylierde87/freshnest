@@ -11,6 +11,7 @@ struct ScanView: View {
     @State private var photosPickerItem: PhotosPickerItem?
     @State private var showCamera = false
     @State private var attachBatch: FoodBatch?
+    @State private var isSaving = false
 
     @Query(filter: #Predicate<FoodBatch> { $0.statusRawValue == "active" })
     private var activeBatches: [FoodBatch]
@@ -77,6 +78,7 @@ struct ScanView: View {
             ScanResultView(
                 data: data,
                 activeBatchesForFood: activeBatches.filter { $0.foodDefinitionID == data.foodID },
+                isSaving: isSaving,
                 onLooksCorrect: {},
                 onLooksFresher: { viewModel.adjustResult(delta: 15) },
                 onLooksWorse: { viewModel.adjustResult(delta: -15) },
@@ -166,6 +168,14 @@ struct ScanView: View {
     }
 
     private func addToKitchen(data: ScanResultData, image: UIImage?) {
+        // Guards against a duplicate FoodBatch/FoodEvent/FreshnessScan being
+        // inserted from a second tap before `viewModel.reset()` below swaps the
+        // phase away from `.result`, dismissing this screen. Left `true` (not
+        // reset here) so the guard holds until that happens; ScanResultView
+        // also disables its buttons while this is set.
+        guard !isSaving else { return }
+        isSaving = true
+
         let batch = FoodBatch(
             foodDefinitionID: data.foodID,
             purchaseDate: container.clock.now,
@@ -181,14 +191,20 @@ struct ScanView: View {
         modelContext.insert(addedEvent)
         attachScan(to: batch, data: data, image: image)
         viewModel?.reset()
+        isSaving = false
         router.showFoodDetails(batchID: batch.id, from: .home)
     }
 
     private func updateExisting(batch: FoodBatch, data: ScanResultData, image: UIImage?) {
+        // See the guard note in `addToKitchen` above — same double-tap protection.
+        guard !isSaving else { return }
+        isSaving = true
+
         batch.currentFreshnessScore = data.score
         batch.updatedAt = container.clock.now
         attachScan(to: batch, data: data, image: image)
         viewModel?.reset()
+        isSaving = false
         router.showFoodDetails(batchID: batch.id, from: .home)
     }
 

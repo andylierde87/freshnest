@@ -20,6 +20,7 @@ struct FoodBatchFormView: View {
     @State private var ripeness: RipenessState
     @State private var purchaseDate: Date
     @State private var notes: String
+    @State private var isSaving = false
 
     init(mode: FoodBatchFormMode) {
         self.mode = mode
@@ -105,6 +106,7 @@ struct FoodBatchFormView: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button(confirmTitle, action: save)
                     .accessibilityIdentifier("addFood.saveButton")
+                    .disabled(isSaving)
             }
         }
         .background(FreshnestColors.background)
@@ -125,6 +127,11 @@ struct FoodBatchFormView: View {
     }
 
     private func save() {
+        // Guards against a duplicate FoodBatch/FoodEvent being inserted from a
+        // second tap before `dismiss()` below closes this screen.
+        guard !isSaving else { return }
+        isSaving = true
+
         switch mode {
         case .add(let definition):
             let batch = FoodBatch(

@@ -1,5 +1,8 @@
 import Foundation
+import OSLog
 import SwiftData
+
+private let logger = Logger(subsystem: "com.pantrypulse.ios", category: "Persistence")
 
 enum FreshnestSchema {
     static let models: [any PersistentModel.Type] = [
@@ -18,8 +21,14 @@ enum ModelContainerFactory {
         let schema = Schema(FreshnestSchema.models)
         let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
 
-        if let container = try? ModelContainer(for: schema, configurations: [configuration]) {
-            return container
+        do {
+            return try ModelContainer(for: schema, configurations: [configuration])
+        } catch {
+            // Falling back to an in-memory store silently loses every batch,
+            // event, and scan the user had — this is only reachable if the
+            // on-disk store can't be opened/migrated, but it must stay
+            // diagnosable rather than fail completely silently.
+            logger.fault("Persistent ModelContainer failed to load, falling back to in-memory store: \(error, privacy: .public)")
         }
 
         let fallbackConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)

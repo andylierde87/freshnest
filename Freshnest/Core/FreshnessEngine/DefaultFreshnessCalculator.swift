@@ -34,7 +34,7 @@ struct DefaultFreshnessCalculator: FreshnessCalculating {
 
         let remainingFraction = Double(finalScore) / 100.0
         let remainingDays = Int((remainingFraction * Double(shelfLifeDays)).rounded())
-        let estimatedFreshUntil = Calendar.freshnestUTC.date(
+        let estimatedFreshUntil = Calendar.current.date(
             byAdding: .day,
             value: remainingDays,
             to: input.currentDate
@@ -54,16 +54,9 @@ struct DefaultFreshnessCalculator: FreshnessCalculating {
     }
 
     private func daysBetween(_ start: Date, _ end: Date) -> Int {
-        Calendar.freshnestUTC.dateComponents([.day], from: start, to: end).day ?? 0
+        // Uses the device's local calendar so "elapsed days" matches the
+        // calendar-day boundaries (midnight) the user actually experiences,
+        // rather than UTC midnight.
+        Calendar.current.dateComponents([.day], from: start, to: end).day ?? 0
     }
-}
-
-extension Calendar {
-    /// A fixed-timezone calendar so day-difference math is deterministic
-    /// regardless of the device's current time zone/DST state.
-    static let freshnestUTC: Calendar = {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(identifier: "UTC") ?? .current
-        return calendar
-    }()
 }

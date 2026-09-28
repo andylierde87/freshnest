@@ -21,8 +21,9 @@ struct MainTabView: View {
             }
 
             Tab(AppTab.scan.title, systemImage: AppTab.scan.symbolName, value: .scan) {
-                NavigationStack {
+                NavigationStack(path: $router.scanPath) {
                     ScanView()
+                        .navigationDestination(for: FreshnestRoute.self, destination: destination)
                 }
             }
 

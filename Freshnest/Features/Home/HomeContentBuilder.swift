@@ -22,7 +22,10 @@ enum HomeContentBuilder {
             .sorted(by: isMoreUrgent)
 
         let attention = scored.filter { $0.result.state == .checkCarefully || $0.result.state == .eatToday }
-        let eatFirst = Array(scored.prefix(5))
+        // Excludes anything already surfaced in the attention card above so
+        // the same batch isn't shown twice on the Home screen.
+        let attentionIDs = Set(attention.map(\.id))
+        let eatFirst = Array(scored.filter { !attentionIDs.contains($0.id) }.prefix(5))
         let freshThisWeek = scored.filter { $0.result.state == .fresh || $0.result.state == .veryFresh }
 
         return HomeSections(attentionItems: attention, eatFirst: eatFirst, freshThisWeek: Array(freshThisWeek.prefix(8)))

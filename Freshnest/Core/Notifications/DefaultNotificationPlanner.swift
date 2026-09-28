@@ -59,14 +59,18 @@ struct DefaultNotificationPlanner: NotificationPlanning {
 
     private func nextFireDate(hour: Int, minute: Int, after now: Date) -> Date {
         let calendar = Calendar.current
-        var components = calendar.dateComponents([.year, .month, .day], from: now)
+        var components = DateComponents()
         components.hour = hour
         components.minute = minute
         components.second = 0
-        let candidate = calendar.date(from: components) ?? now
-        guard candidate > now else {
-            return calendar.date(byAdding: .day, value: 1, to: candidate) ?? candidate
-        }
-        return candidate
+        // `nextDate` finds the next occurrence of this wall-clock time strictly
+        // after `now` and correctly rolls past a nonexistent local time (e.g. a
+        // DST spring-forward gap), unlike manually building components and
+        // falling back to `now` when they don't resolve to a valid date.
+        return calendar.nextDate(
+            after: now,
+            matching: components,
+            matchingPolicy: .nextTimePreservingSmallerComponents
+        ) ?? calendar.date(byAdding: .day, value: 1, to: now) ?? now
     }
 }

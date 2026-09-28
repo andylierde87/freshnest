@@ -19,7 +19,10 @@ struct FoodBatchMutationService {
 
     @discardableResult
     func ateOne(_ batch: FoodBatch) throws -> FoodBatch {
-        try ate(batch, quantity: 1)
+        // Clamp to what's left so "Ate One" finishes off a batch with a
+        // fractional remainder (e.g. 0.5 kg) instead of throwing
+        // `invalidQuantity` and silently no-oping at the call site.
+        try ate(batch, quantity: min(1, batch.quantity))
     }
 
     @discardableResult

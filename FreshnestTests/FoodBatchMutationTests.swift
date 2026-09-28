@@ -41,6 +41,13 @@ final class FoodBatchMutationTests: XCTestCase {
         XCTAssertEqual(batch.status, .finished)
     }
 
+    func testAteOneOnFractionalRemainderFinishesBatchInsteadOfThrowing() throws {
+        let batch = makeBatch(quantity: 0.5)
+        try service.ateOne(batch)
+        XCTAssertEqual(batch.quantity, 0)
+        XCTAssertEqual(batch.status, .finished)
+    }
+
     func testDiscardPartialDecreasesQuantityAndCreatesWasteEvent() throws {
         let batch = makeBatch(quantity: 4)
         try service.discard(batch, quantity: 1, reason: .spoiled)

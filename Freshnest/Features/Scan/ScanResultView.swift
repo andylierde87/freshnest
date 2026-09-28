@@ -3,6 +3,7 @@ import SwiftUI
 struct ScanResultView: View {
     let data: ScanResultData
     let activeBatchesForFood: [FoodBatch]
+    let isSaving: Bool
     let onLooksCorrect: () -> Void
     let onLooksFresher: () -> Void
     let onLooksWorse: () -> Void
@@ -49,15 +50,18 @@ struct ScanResultView: View {
                     Button("Add to Kitchen", action: onAddToKitchen)
                         .buttonStyle(.freshnestPrimary)
                         .accessibilityIdentifier("scan.result.addToKitchen")
+                        .disabled(isSaving)
 
                     if !activeBatchesForFood.isEmpty {
                         Button("Update Existing Item") { showExistingPicker = true }
                             .buttonStyle(.freshnestSecondary)
+                            .disabled(isSaving)
                     }
 
                     Button("Scan Again", action: onScanAgain)
                         .buttonStyle(.freshnestSecondary)
                         .accessibilityIdentifier("scan.result.scanAgain")
+                        .disabled(isSaving)
                 }
                 .padding(.horizontal, FreshnestSpacing.md)
             }

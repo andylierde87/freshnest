@@ -46,6 +46,7 @@ final class AppRouter {
 
     var homePath: [FreshnestRoute] = []
     var kitchenPath: [FreshnestRoute] = []
+    var scanPath: [FreshnestRoute] = []
     var rescuePath: [FreshnestRoute] = []
     var insightsPath: [FreshnestRoute] = []
 
@@ -53,8 +54,9 @@ final class AppRouter {
         let targetTab = tab ?? selectedTab
         selectedTab = targetTab
         switch targetTab {
-        case .home, .scan: homePath.append(.foodDetails(batchID: batchID))
+        case .home: homePath.append(.foodDetails(batchID: batchID))
         case .kitchen: kitchenPath.append(.foodDetails(batchID: batchID))
+        case .scan: scanPath.append(.foodDetails(batchID: batchID))
         case .rescue: rescuePath.append(.foodDetails(batchID: batchID))
         case .insights: insightsPath.append(.foodDetails(batchID: batchID))
         }

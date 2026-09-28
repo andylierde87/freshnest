@@ -26,8 +26,14 @@ struct SystemNotificationScheduler: NotificationScheduling {
         content.body = notification.body
         content.sound = .default
 
-        let interval = max(60, notification.fireDate.timeIntervalSinceNow)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
+        // A calendar trigger (not a fixed elapsed-seconds interval) so the
+        // notification still fires at the intended local wall-clock time
+        // across a DST transition between scheduling and delivery.
+        let components = Calendar.current.dateComponents(
+            [.year, .month, .day, .hour, .minute, .second],
+            from: notification.fireDate
+        )
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
 
         try? await UNUserNotificationCenter.current().add(request)

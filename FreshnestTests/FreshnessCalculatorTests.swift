@@ -13,7 +13,7 @@ final class FreshnessCalculatorTests: XCTestCase {
         manualCheck: ManualCheckInput? = nil,
         photoScan: PhotoScanInput? = nil
     ) -> FreshnessInput {
-        let purchaseDate = Calendar.freshnestUTC.date(byAdding: .day, value: -purchaseDaysAgo, to: now) ?? now
+        let purchaseDate = Calendar.current.date(byAdding: .day, value: -purchaseDaysAgo, to: now) ?? now
         return FreshnessInput(
             foodDefinition: food,
             purchaseDate: purchaseDate,
