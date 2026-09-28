@@ -123,7 +123,11 @@ workflows:
           xcode-project use-profiles
       - name: Bump build number
         script: |
-          agvtool new-version -all "$(($(app-store-connect get-latest-app-store-build-number "$BUNDLE_ID") + 1))"
+          # Uses the latest build number across ALL uploaded builds (TestFlight
+          # included), not just App Store versions — the app has no approved
+          # App Store version yet, so `get-latest-app-store-build-number`
+          # returns 0 and collides with the build number already on TestFlight.
+          agvtool new-version -all "$(($(app-store-connect get-latest-build-number "$BUNDLE_ID") + 1))"
       - name: Build and archive
         script: |
           xcode-project build-ipa \
