@@ -29,14 +29,13 @@ final class AddFoodUITests: XCTestCase {
 
         // Popping back to the search screen can silently restore keyboard
         // focus to the search field, which visually covers the tab bar.
-        // Explicitly dismiss it before trying to switch tabs.
+        // Explicitly dismiss it before trying to switch tabs. Sending the
+        // return keystroke directly (rather than tapping a keyboard button by
+        // label) avoids depending on the keyboard's locale and sidesteps a
+        // flaky AX scroll-to-visible failure when tapping onscreen keyboard
+        // keys on some simulators.
         if app.keyboards.firstMatch.waitForExistence(timeout: 2) {
-            let returnKey = app.keyboards.buttons["Search"].exists
-                ? app.keyboards.buttons["Search"]
-                : app.keyboards.buttons["Return"]
-            if returnKey.exists {
-                returnKey.tap()
-            }
+            app.typeText("\n")
         }
 
         let kitchenTab = app.tab("Kitchen")
