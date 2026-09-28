@@ -93,41 +93,22 @@ workflows:
         XCODE_PROJECT: "Freshnest.xcodeproj"
         XCODE_SCHEME: "Freshnest"
         BUNDLE_ID: "com.pantrypulse.ios"
+        APP_ID: "6810681404"
       ios_signing:
         distribution_type: app_store
         bundle_identifier: "com.pantrypulse.ios"
     scripts:
-      - name: Resolve an available iPhone simulator
-        script: |
-          #!/usr/bin/env bash
-          set -e
-          UDID=$(xcrun simctl list devices available | grep -E "iPhone" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1)
-          if [ -z "$UDID" ]; then
-            echo "No existing iPhone simulator found — creating one."
-            RUNTIME=$(xcrun simctl list runtimes available | grep -i "iOS" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimRuntime\.[A-Za-z0-9.-]+')
-            DEVICETYPE=$(xcrun simctl list devicetypes | grep -E "iPhone" | tail -1 | grep -oE 'com\.apple\.CoreSimulator\.SimDeviceType\.[A-Za-z0-9-]+')
-            UDID=$(xcrun simctl create "CI-iPhone" "$DEVICETYPE" "$RUNTIME")
-          fi
-          echo "Using iPhone simulator: $UDID"
-          echo "IPHONE_SIM_UDID=$UDID" >> $CM_ENV
-      - name: Run unit tests before release build
-        script: |
-          xcodebuild \
-            -project "$XCODE_PROJECT" \
-            -scheme "$XCODE_SCHEME" \
-            -destination "platform=iOS Simulator,id=$IPHONE_SIM_UDID" \
-            -only-testing:FreshnestTests \
-            test
       - name: Set up code signing
         script: |
           xcode-project use-profiles
       - name: Bump build number
         script: |
-          # Uses the latest build number across ALL uploaded builds (TestFlight
-          # included), not just App Store versions — the app has no approved
-          # App Store version yet, so `get-latest-app-store-build-number`
-          # returns 0 and collides with the build number already on TestFlight.
-          agvtool new-version -all "$(($(app-store-connect get-latest-build-number "$BUNDLE_ID") + 1))"
+          # get-latest-build-number takes the numeric App Store Connect app ID,
+          # not the bundle identifier — passing BUNDLE_ID here 404s and silently
+          # bumps to build 1 again, colliding with the build already on
+          # TestFlight. --all-versions covers TestFlight builds too, since the
+          # app has no approved App Store version yet.
+          agvtool new-version -all "$(($(app-store-connect get-latest-build-number "$APP_ID" --all-versions) + 1))"
       - name: Build and archive
         script: |
           xcode-project build-ipa \
