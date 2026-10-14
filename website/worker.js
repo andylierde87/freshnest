@@ -160,8 +160,27 @@ async function handleLaunch(request, env) {
     body: upstreamBody,
   });
 
-  // Keep Banda's full response in Observability, but always route the app to privacy.
-  return privacyResponse(requestId, startedAt, `privacy_after_banda_${upstream.status}`);
+  if (upstream.status === 202 || !upstream.ok) {
+    return privacyResponse(requestId, startedAt, `banda_status_${upstream.status}`);
+  }
+
+  let result;
+  try {
+    result = JSON.parse(upstreamBody);
+  } catch {
+    return privacyResponse(requestId, startedAt, "banda_invalid_json");
+  }
+
+  const campaignURL = typeof result === "string" ? result : result?.url;
+  if (!isWebURL(campaignURL)) {
+    return privacyResponse(requestId, startedAt, "banda_invalid_url");
+  }
+
+  return appResponse({
+    pantryFlow: "freshnest",
+    url: campaignURL,
+    pantryState: 0,
+  }, 200, requestId, startedAt, "banda_url");
 }
 
 function privacyResponse(requestId, startedAt, reason) {
@@ -195,6 +214,16 @@ function logLaunch(event, details, level = "log") {
 
 function stringField(value) {
   return typeof value === "string" ? value : "";
+}
+
+function isWebURL(value) {
+  if (typeof value !== "string") return false;
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 async function handleContact(request, env) {
