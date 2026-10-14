@@ -44,7 +44,7 @@ Built for iPhone and iPad, with an adaptive layout, full Dynamic Type and VoiceO
 produce,fridge,freshness,fruit,vegetable,food waste,pantry,kitchen,grocery,expiration,storage
 
 ## What's New in This Version
-Push notifications are now supported. This update also improves the in-app web experience, adds clearer recovery when a page cannot load, makes scan feedback easier to use with larger text, and prevents invalid zero-quantity pantry items.
+Deze update verbetert de leesbaarheid bij grotere tekstinstellingen, voorkomt ongeldige hoeveelheden en bevat diverse verbeteringen voor stabiliteit en betrouwbaarheid.
 
 ## Category
 Primary: Food & Drink
