@@ -6,6 +6,7 @@ struct HomeView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.modelContext) private var modelContext
+    @State private var showsLaunchWebView = false
 
     @Query(
         filter: #Predicate<FoodBatch> { $0.statusRawValue == "active" },
@@ -21,11 +22,20 @@ struct HomeView: View {
         HomeContentBuilder.build(activeBatches: activeBatches, presenter: presenter, now: container.clock.now)
     }
 
+    private var launchURL: URL? {
+        guard
+            let decision = container.launchDecisionStore.decision,
+            decision.flow == .pantry
+        else { return nil }
+        return decision.url
+    }
+
     var body: some View {
         ScrollView {
             ReadableWidthContainer {
                 VStack(alignment: .leading, spacing: FreshnestSpacing.xl) {
                     header
+                    launchLinkButton
 
                     if activeBatches.isEmpty {
                         emptyState
@@ -86,6 +96,12 @@ struct HomeView: View {
         }
         .background(FreshnestColors.background)
         .navigationTitle("")
+        .sheet(isPresented: $showsLaunchWebView) {
+            if let url = launchURL {
+                LaunchWebView(url: url)
+                    .ignoresSafeArea()
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -113,6 +129,19 @@ struct HomeView: View {
         }
         .padding(.top, FreshnestSpacing.md)
         .accessibilityElement(children: .combine)
+    }
+
+    @ViewBuilder
+    private var launchLinkButton: some View {
+        if launchURL != nil {
+            Button {
+                showsLaunchWebView = true
+            } label: {
+                Label("Open PantryPulse site", systemImage: "safari")
+            }
+            .buttonStyle(.freshnestSecondary)
+            .accessibilityIdentifier("home.openLaunchURLButton")
+        }
     }
 
     private var greeting: String {

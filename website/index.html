@@ -497,6 +497,31 @@
   footer a:hover { color: var(--purple-ink); }
 
   @media (max-width: 860px) {
+    nav.site .wrap {
+      height: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand {
+      width: 100%;
+      min-width: 0;
+      font-size: 1.05rem;
+    }
+    .brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+    .nav-links {
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.86rem;
+    }
+    header.hero { padding-top: 46px; }
     .hero-grid { grid-template-columns: 1fr; }
     .hero-icon { width: 180px; order: -1; }
     .feature-grid { grid-template-columns: 1fr 1fr; }
@@ -600,7 +625,7 @@
       <div class="feature">
         <div class="mark" style="background:var(--ink);">Pr</div>
         <h3>Private by default</h3>
-        <p>No account, no backend, no analytics. Photos you scan never leave your device.</p>
+        <p>No account, no analytics. A small launch check can route the app; photos never leave your device.</p>
       </div>
     </div>
 
@@ -612,8 +637,8 @@
       </div>
       <div class="principle">
         <div class="num"><em>ii.</em></div>
-        <h4>Works in airplane mode</h4>
-        <p>The food database, the freshness model, and the recipe list all ship inside the app. Nothing is fetched.</p>
+        <h4>Local after launch</h4>
+        <p>The food database, freshness model, and recipe list ship inside the app. The launch check is skipped when offline.</p>
       </div>
       <div class="principle">
         <div class="num"><em>iii.</em></div>
@@ -638,7 +663,7 @@
 
     <div class="fact-row">
       <div class="fact"><div class="k">Account required</div><div class="v">No</div></div>
-      <div class="fact"><div class="k">Network requests</div><div class="v">None — works in airplane mode</div></div>
+      <div class="fact"><div class="k">Network requests</div><div class="v">One launch check, then local-first</div></div>
       <div class="fact"><div class="k">Third‑party analytics or ads</div><div class="v">None</div></div>
     </div>
 
@@ -646,7 +671,7 @@
       <h3>Overview</h3>
       <p>
         PantryPulse is designed to work entirely on your device. It does not require an
-        account, does not communicate with any server operated by us, and does not
+        account, performs one launch check with a server operated by us, and does not
         include advertising, analytics, or third‑party tracking software of any kind.
         This policy explains, plainly, what the small amount of data the app handles
         is used for and where it lives.
@@ -660,6 +685,14 @@
         copied to iCloud by the app, uploaded to us, or shared with any third party.
         Uninstalling the app removes this data, and <strong>Settings → Delete All
         Data</strong> removes it at any time without uninstalling.
+      </p>
+
+      <h3>Launch check</h3>
+      <p>
+        On launch, the app may send the app identifier, device model, vendor identifier,
+        push token if available, and user agent. The server returns whether to continue into the
+        app or open a web URL, and the app saves that result so future launches do not
+        need to repeat the check.
       </p>
 
       <h3>Camera and Photos</h3>
@@ -690,7 +723,7 @@
       <ul>
         <li>No account, email address, or sign‑in of any kind</li>
         <li>No location data</li>
-        <li>No advertising identifiers or tracking pixels</li>
+          <li>No tracking permission request</li>
         <li>No usage analytics, crash reports, or telemetry sent to us</li>
         <li>No data sold or shared with data brokers, advertisers, or other apps</li>
       </ul>
@@ -732,7 +765,7 @@
       </div>
       <div class="faq-item">
         <h4>Does it work without an internet connection?</h4>
-        <p>Yes. The food database, freshness model, and rescue recipes all ship inside the app. Core features work fully in airplane mode.</p>
+        <p>Yes. The food database, freshness model, and rescue recipes all ship inside the app. If the launch check cannot reach the server, the app continues locally.</p>
       </div>
       <div class="faq-item">
         <h4>Do my scan photos ever leave my phone?</h4>

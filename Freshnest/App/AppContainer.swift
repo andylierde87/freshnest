@@ -10,6 +10,8 @@ final class AppContainer {
     let modelContainer: ModelContainer
     let foodRepository: FoodRepository
     let settingsStore: AppSettingsStore
+    let launchDecisionStore: LaunchDecisionStore
+    let launchClient: LaunchDecisionFetching
     let notificationCoordinator: NotificationCoordinator
     let scanPhotoStore: ScanPhotoStoring
 
@@ -26,6 +28,8 @@ final class AppContainer {
         modelContainer: ModelContainer,
         foodRepository: FoodRepository,
         settingsStore: AppSettingsStore = AppSettingsStore(),
+        launchDecisionStore: LaunchDecisionStore = LaunchDecisionStore(),
+        launchClient: LaunchDecisionFetching = RemoteLaunchClient(),
         notificationCoordinator: NotificationCoordinator? = nil,
         scanPhotoStore: ScanPhotoStoring = FileSystemScanPhotoStore(),
         clock: ClockProviding = SystemClock(),
@@ -39,6 +43,8 @@ final class AppContainer {
         self.modelContainer = modelContainer
         self.foodRepository = foodRepository
         self.settingsStore = settingsStore
+        self.launchDecisionStore = launchDecisionStore
+        self.launchClient = launchClient
         self.notificationCoordinator = notificationCoordinator ?? NotificationCoordinator()
         self.scanPhotoStore = scanPhotoStore
         self.clock = clock

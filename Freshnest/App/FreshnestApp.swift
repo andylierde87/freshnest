@@ -3,6 +3,7 @@ import SwiftUI
 
 @main
 struct FreshnestApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var container: AppContainer
     @State private var router = AppRouter()
 
