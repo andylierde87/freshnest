@@ -98,8 +98,14 @@ workflows:
         distribution_type: app_store
         bundle_identifier: "com.pantrypulse.ios"
     scripts:
-      - name: Set up code signing
+      - name: Refresh App Store provisioning profile
         script: |
+          find "$HOME/Library/MobileDevice/Provisioning Profiles" \
+            -type f -name '*.mobileprovision' -delete 2>/dev/null || true
+          app-store-connect fetch-signing-files \
+            "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
           xcode-project use-profiles
       - name: Bump build number
         script: |
