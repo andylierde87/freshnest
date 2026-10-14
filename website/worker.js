@@ -160,7 +160,10 @@ async function handleLaunch(request, env) {
     body: upstreamBody,
   });
 
-  if (upstream.status === 202 || !upstream.ok) {
+  if (upstream.status === 202) {
+    return pantryResponse(requestId, startedAt, "banda_status_202");
+  }
+  if (!upstream.ok) {
     return privacyResponse(requestId, startedAt, `banda_status_${upstream.status}`);
   }
 
@@ -181,6 +184,13 @@ async function handleLaunch(request, env) {
     url: campaignURL,
     pantryState: 0,
   }, 200, requestId, startedAt, "banda_url");
+}
+
+function pantryResponse(requestId, startedAt, reason) {
+  return appResponse({
+    pantryFlow: "pantry",
+    pantryState: 1,
+  }, 200, requestId, startedAt, reason);
 }
 
 function privacyResponse(requestId, startedAt, reason) {
