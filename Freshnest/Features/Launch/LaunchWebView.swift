@@ -16,6 +16,7 @@ private final class LaunchWebViewModel: NSObject, ObservableObject, WKNavigation
     @Published private(set) var canGoForward = false
     @Published private(set) var isLoading = false
     @Published private(set) var progress = 0.0
+    @Published private(set) var loadFailed = false
 
     let webView: WKWebView
     private var downloadDestination: URL?
@@ -64,6 +65,11 @@ private final class LaunchWebViewModel: NSObject, ObservableObject, WKNavigation
     func goForward() { if webView.canGoForward { webView.goForward() } }
     func reload() { webView.reload() }
 
+    func retry(_ url: URL) {
+        loadFailed = false
+        webView.load(URLRequest(url: webView.url ?? url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 30))
+    }
+
     private func refreshState() {
         canGoBack = webView.canGoBack
         canGoForward = webView.canGoForward
@@ -71,6 +77,7 @@ private final class LaunchWebViewModel: NSObject, ObservableObject, WKNavigation
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        loadFailed = false
         progress = 0.12
         refreshState()
     }
@@ -86,11 +93,18 @@ private final class LaunchWebViewModel: NSObject, ObservableObject, WKNavigation
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        setLoadFailure(for: error)
         refreshState()
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        setLoadFailure(for: error)
         refreshState()
+    }
+
+    private func setLoadFailure(for error: Error) {
+        guard (error as? URLError)?.code != .cancelled else { return }
+        loadFailed = true
     }
 
     func webView(
@@ -266,8 +280,25 @@ struct LaunchWebView: View {
                     .tint(FreshnestColors.accent)
             }
 
-            LaunchWKWebView(webView: browser.webView)
-                .accessibilityIdentifier("launch.webView")
+            ZStack {
+                LaunchWKWebView(webView: browser.webView)
+                    .accessibilityIdentifier("launch.webView")
+
+                if browser.loadFailed {
+                    ContentUnavailableView {
+                        Label("Unable to Load Page", systemImage: "wifi.exclamationmark")
+                    } description: {
+                        Text("Check your internet connection and try again.")
+                    } actions: {
+                        Button("Try Again") { browser.retry(url) }
+                            .buttonStyle(.borderedProminent)
+                            .accessibilityIdentifier("launch.retryButton")
+                    }
+                    .padding()
+                    .background(FreshnestColors.background)
+                    .accessibilityIdentifier("launch.errorState")
+                }
+            }
 
             toolbar
         }

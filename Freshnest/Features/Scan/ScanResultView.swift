@@ -35,13 +35,14 @@ struct ScanResultView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, FreshnestSpacing.lg)
 
-                HStack(spacing: FreshnestSpacing.xs) {
-                    Button("Looks Fresher", action: onLooksFresher)
-                        .buttonStyle(.freshnestSecondary)
-                    Button("Looks Correct", action: onLooksCorrect)
-                        .buttonStyle(.freshnestSecondary)
-                    Button("Looks Worse", action: onLooksWorse)
-                        .buttonStyle(.freshnestSecondary)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: FreshnestSpacing.xs) {
+                        feedbackButtons
+                    }
+
+                    VStack(spacing: FreshnestSpacing.xs) {
+                        feedbackButtons
+                    }
                 }
                 .font(.footnote)
                 .padding(.horizontal, FreshnestSpacing.md)
@@ -74,6 +75,19 @@ struct ScanResultView: View {
                 }
             }
         }
+    }
+
+    @ViewBuilder
+    private var feedbackButtons: some View {
+        Button("Looks Fresher", action: onLooksFresher)
+            .buttonStyle(.freshnestSecondary)
+            .accessibilityIdentifier("scan.result.looksFresher")
+        Button("Looks Correct", action: onLooksCorrect)
+            .buttonStyle(.freshnestSecondary)
+            .accessibilityIdentifier("scan.result.looksCorrect")
+        Button("Looks Worse", action: onLooksWorse)
+            .buttonStyle(.freshnestSecondary)
+            .accessibilityIdentifier("scan.result.looksWorse")
     }
 
     private var observationsSection: some View {

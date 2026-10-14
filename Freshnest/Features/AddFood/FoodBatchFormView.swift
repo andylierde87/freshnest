@@ -61,7 +61,7 @@ struct FoodBatchFormView: View {
             }
 
             Section(String(localized: "Quantity")) {
-                Stepper(value: $quantity, in: 0...999, step: 1) {
+                Stepper(value: $quantity, in: 1...999, step: 1) {
                     Text("\(quantity.formattedQuantity) \(unit.displayName)")
                 }
                 .accessibilityIdentifier("addFood.quantityStepper")

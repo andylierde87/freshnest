@@ -43,8 +43,8 @@ Built for iPhone and iPad, with an adaptive layout, full Dynamic Type and VoiceO
 ## Keywords (100 chars max, comma-separated, no spaces after commas)
 produce,fridge,freshness,fruit,vegetable,food waste,pantry,kitchen,grocery,expiration,storage
 
-## What's New in This Version (for first release)
-Welcome to PantryPulse — track produce freshness, scan items for a visual condition estimate, and get storage and rescue-recipe suggestions, all fully offline.
+## What's New in This Version
+Push notifications are now supported. This update also improves the in-app web experience, adds clearer recovery when a page cannot load, makes scan feedback easier to use with larger text, and prevents invalid zero-quantity pantry items.
 
 ## Category
 Primary: Food & Drink

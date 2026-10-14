@@ -25,4 +25,22 @@ final class ScanFlowUITests: XCTestCase {
         app.tapTab("Kitchen")
         XCTAssertTrue(app.buttons["kitchen.foodCard.banana"].waitForExistence(timeout: 15))
     }
+
+    func testScanFeedbackControlsFitWithAccessibilityText() {
+        let app = XCUIApplication()
+        app.launchArguments += [
+            "--uitesting", "--reset-data", "--skip-onboarding",
+            "--mock-scan=highConfidenceBanana", "--auto-trigger-scan",
+            "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityExtraExtraExtraLarge",
+        ]
+        app.launch()
+        app.tapTab("Scan")
+
+        XCTAssertTrue(app.buttons["scan.confirmButton"].waitForExistence(timeout: 10))
+        app.buttons["scan.confirmButton"].tap()
+
+        XCTAssertTrue(app.buttons["scan.result.looksFresher"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.buttons["scan.result.looksCorrect"].exists)
+        XCTAssertTrue(app.buttons["scan.result.looksWorse"].exists)
+    }
 }
